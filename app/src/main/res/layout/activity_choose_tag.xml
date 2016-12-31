@@ -9,9 +9,35 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.feiyu.scripsaying.activity.ChooseTagActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="choose tag activity"
-        android:textSize="20sp" />
+    <ImageView
+        android:id="@+id/tag1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@mipmap/tag1" />
+
+    <ImageView
+        android:id="@+id/tag2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/tag1"
+        android:background="@mipmap/tag2" />
+
+    <ImageView
+        android:id="@+id/tag3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/tag1"
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/tag3" />
+
+    <ImageView
+        android:id="@+id/tag4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/tag2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/tag3"
+        android:background="@mipmap/tag4" />
 </RelativeLayout>

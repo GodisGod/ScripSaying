@@ -20,8 +20,7 @@
                 android:layout_width="300dp"
                 android:layout_height="300dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"
-                android:background="@mipmap/ic_launcher" />
+                android:layout_marginTop="50dp" />
 
             <ImageView
                 android:id="@+id/edit_img_usericon"
@@ -38,7 +37,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@mipmap/ic_launcher" />
+                android:background="#975a" />
 
             <ImageView
                 android:id="@+id/edit_img_scrip_audio"
@@ -52,9 +51,10 @@
             <EditText
                 android:id="@+id/edit_text_content"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/edit_img_scrip_audio"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="10dp"
+                android:maxLength="100" />
         </RelativeLayout>
     </ScrollView>
 

@@ -1,6 +1,7 @@
 package com.feiyu.scripsaying.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.feiyu.scripsaying.R;
+import com.feiyu.scripsaying.constant.GlobalConstant;
+import com.feiyu.scripsaying.util.HD;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,19 +37,14 @@ public class ReleaseActivity extends BaseActivity {
     @BindView(R.id.iv_photo)
     ImageView ivPhoto;
 
+    private String imgPath;
+    private Context ctx;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_release);
         ButterKnife.bind(this);
-    }
-
-    public void initView() {
-
-    }
-
-    public void initData() {
-
+        ctx = this;
     }
 
     @OnClick({R.id.btn_album, R.id.btn_camera, R.id.btn_edit_paper})
@@ -62,7 +60,7 @@ public class ReleaseActivity extends BaseActivity {
 
                 break;
             case R.id.btn_edit_paper:
-                startActivity(new Intent(this, PaperEditImgActivity.class));
+
                 break;
 
 
@@ -86,11 +84,20 @@ public class ReleaseActivity extends BaseActivity {
             Cursor c = getContentResolver().query(selectedImage, filePathColumns, null, null, null);
             c.moveToFirst();
             int columnIndex = c.getColumnIndex(filePathColumns[0]);
-            String imagePath = c.getString(columnIndex);
+            imgPath = c.getString(columnIndex);
 
-            Bitmap bm = BitmapFactory.decodeFile(imagePath);
+            Bitmap bm = BitmapFactory.decodeFile(imgPath);
             ivPhoto.setImageBitmap(bm);
             c.close();
+
+            if (imgPath.isEmpty()){
+                HD.TLOG("请先选择一张图片");
+                return;
+            }else{
+                Intent intent = new Intent(ctx,PaperEditImgActivity.class);
+                intent.putExtra(GlobalConstant.CHOOSE_IMG_KEY,imgPath);
+                startActivity(intent);
+            }
         }
     }
 }

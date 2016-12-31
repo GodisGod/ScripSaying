@@ -14,4 +14,7 @@ public class GlobalConstant {
 
     public final static int CHOOSE_TAG = 1;
     public final static String CHOOSE_TAG_KEY = "choose_tag";
+    public final static String CHOOSE_IMG_KEY = "choose_img";
+
+
 }

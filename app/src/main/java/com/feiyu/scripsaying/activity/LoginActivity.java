@@ -176,7 +176,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void done(List<UserInfo> list, BmobException e) {
                         if (e == null) {
                             UserInfo userInfo = list.get(0);
-                            HD.TOS("存在用户： " + userInfo.getUserName() + "  " + userInfo.getUserPassword());
+                            HD.TOS("登录存在用户： " + userInfo.getUserName() + "  " + userInfo.getUserPassword());
                             if (userPassword.equals(userInfo.getUserPassword())) {
                                 //获取用户信息并保存
                                 userToken = userInfo.getToken();
