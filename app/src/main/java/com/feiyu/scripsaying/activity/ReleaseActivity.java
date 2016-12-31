@@ -8,14 +8,20 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.feiyu.scripsaying.R;
 import com.feiyu.scripsaying.constant.GlobalConstant;
+import com.feiyu.scripsaying.util.FileUtil;
 import com.feiyu.scripsaying.util.HD;
+
+import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +40,8 @@ public class ReleaseActivity extends BaseActivity {
     Button btnEditPaper;
     //调用系统相册-选择图片
     private static final int IMAGE = 1;
+    private static final int CAMERA_REQUEST = 2;
+    private static final String takeCameraSaveDir = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "DCIM" + File.separator + "Camera";
     @BindView(R.id.iv_photo)
     ImageView ivPhoto;
 
@@ -56,7 +64,7 @@ public class ReleaseActivity extends BaseActivity {
                 break;
             case R.id.btn_camera:
                 //开启相机
-
+                openCamera();
 
                 break;
             case R.id.btn_edit_paper:
@@ -65,6 +73,13 @@ public class ReleaseActivity extends BaseActivity {
 
 
         }
+    }
+
+    private void openCamera() {
+        // 照相
+        Intent cameraIntent = new Intent(
+                android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cameraIntent, CAMERA_REQUEST);
     }
 
     private void openAlbum() {
@@ -84,18 +99,36 @@ public class ReleaseActivity extends BaseActivity {
             Cursor c = getContentResolver().query(selectedImage, filePathColumns, null, null, null);
             c.moveToFirst();
             int columnIndex = c.getColumnIndex(filePathColumns[0]);
-            imgPath = c.getString(columnIndex);
+            String imgPath = c.getString(columnIndex);
 
             Bitmap bm = BitmapFactory.decodeFile(imgPath);
             ivPhoto.setImageBitmap(bm);
             c.close();
 
-            if (imgPath.isEmpty()){
+            if (imgPath.isEmpty()) {
                 HD.TLOG("请先选择一张图片");
                 return;
-            }else{
+            } else {
                 Intent intent = new Intent(ctx,PaperEditImgActivity.class);
                 intent.putExtra(GlobalConstant.CHOOSE_IMG_KEY,imgPath);
+                startActivity(intent);
+            }
+        }
+
+
+        if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK && data.getExtras().get("data") != null) {
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+
+            File baseFile = FileUtil.getPicBaseFile(takeCameraSaveDir);
+            if(baseFile == null){
+                Toast.makeText(ReleaseActivity.this, "SD卡不可用,请检查SD卡情况", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            String fileName = FileUtil.getFileName();   //图片名称
+            String photoPath = FileUtil.saveBitmap(photo, fileName, baseFile);
+            if (!TextUtils.isEmpty(photoPath)) {
+                Intent intent = new Intent(ctx, PaperEditImgActivity.class);
+                intent.putExtra(GlobalConstant.CHOOSE_IMG_KEY, photoPath);
                 startActivity(intent);
             }
         }
