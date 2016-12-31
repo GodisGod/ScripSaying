@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void done(List<UserInfo> list, BmobException e) {
                         if (e == null) {
-                            UserInfo userInfo = list.get(0);
+                            final UserInfo userInfo = list.get(0);
                             userName = userInfo.getUserName();
                             HD.TOS("存在用户： " + userInfo.getUserName() + "  " + userInfo.getUserPassword());
                             //如果和服务器保存的Token一致就使用本地Token连接融云
@@ -96,6 +96,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     @Override
                                     public void onSuccess(String userid) {
                                         HD.TLOG("--onSuccess" + userid);
+                                        SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
+                                        edit.putString(GlobalConstant.USER_ID, userAccount);
+                                        edit.putString(GlobalConstant.USER_NAME, userInfo.getUserName());
+                                        edit.putString(GlobalConstant.USER_PASSWORD, userPassword);
+                                        edit.putString(GlobalConstant.USER_GENDER, userInfo.getUserGender());
+                                        edit.putString(GlobalConstant.USER_ICON, userInfo.getUserIcon());
+                                        edit.putString(GlobalConstant.USER_TYPE, userInfo.getUserType());
+                                        edit.putString(GlobalConstant.USER_TOKEN, userToken);
+                                        edit.putString(GlobalConstant.DEFAULT_TOKEN, userToken);
+                                        edit.apply();
                                         startActivity(new Intent(ctx, ScripSayingActivity.class));
                                         finish();
                                     }

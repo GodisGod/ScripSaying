@@ -57,7 +57,7 @@ public class PaperEditImgActivity extends BaseActivity {
     private int chooseTag;
     private String chooseImg;
     private String userIcon;
-    private String audioPath;
+    private String audioPath = "";
     private String scripText = "";
 
 
@@ -95,7 +95,12 @@ public class PaperEditImgActivity extends BaseActivity {
                     HD.TLOG("lat: " + lat + "   lng: " + lng + "\n" + "位置： " + amapLocation.getAddress());
                     //todo 获取tag图片路径
                     scripText = scripTextContent.getText().toString();
-                    sendPaperMessage(chooseImg, audioPath, chooseImg, scripText, new BmobGeoPoint(lng, lat));
+                    //todo 获取录音文件
+                    if (audioPath.isEmpty()){
+                        sendPaperMessage(chooseImg, null, chooseImg, scripText, new BmobGeoPoint(lng, lat));
+                    }else{
+                        sendPaperMessage(chooseImg, audioPath, chooseImg, scripText, new BmobGeoPoint(lng, lat));
+                    }
                 } else {
                     //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
                     HD.TOS("location Error, ErrCode:"
@@ -239,7 +244,7 @@ public class PaperEditImgActivity extends BaseActivity {
                 fileCombination = 3;
             }
         }
-
+        HD.TLOG("===333===");
         BmobFile.uploadBatch(filePaths, new UploadBatchListener() {
             @Override
             public void onSuccess(List<BmobFile> files, List<String> urls) {
