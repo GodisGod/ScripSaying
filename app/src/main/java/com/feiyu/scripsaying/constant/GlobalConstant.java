@@ -11,10 +11,18 @@ public class GlobalConstant {
     public final static String USER_TOKEN = "USER_TOKEN";
     public final static String DEFAULT_TOKEN = "DEFAULT_TOKEN";
     public final static String USER_ICON = "USER_ICON";
+    public final static String USER_GENDER = "USER_GENDER";//女
+    public final static String USER_TYPE = "USER_TYPE";//萝莉
 
     public final static int CHOOSE_TAG = 1;
     public final static String CHOOSE_TAG_KEY = "choose_tag";
     public final static String CHOOSE_IMG_KEY = "choose_img";
 
-
+    //录音时长的sp缓存的key
+    public static final String RECORD_TIME = "RECORD_TIME";
+    //录音保存的缓存目录
+    public static final String RECORD_CACHE = "/record";
+    //录音的文件格式
+    public static final String RECORD_FORMAT_MP3 = ".mp3";
+    public static final String RECORD_FORMAT = ".amr";
 }

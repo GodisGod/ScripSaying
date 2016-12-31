@@ -184,6 +184,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 edit.putString(GlobalConstant.USER_ID, userAccount);
                                 edit.putString(GlobalConstant.USER_NAME, userInfo.getUserName());
                                 edit.putString(GlobalConstant.USER_PASSWORD, userPassword);
+                                edit.putString(GlobalConstant.USER_GENDER, userInfo.getUserGender());
                                 edit.putString(GlobalConstant.USER_TOKEN, userToken);
                                 edit.putString(GlobalConstant.DEFAULT_TOKEN, userToken);
                                 edit.apply();

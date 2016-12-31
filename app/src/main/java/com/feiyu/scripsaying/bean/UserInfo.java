@@ -10,6 +10,7 @@ public class UserInfo extends BmobObject {
     private String userName;       //名字
     private String userIcon;//头像
     private String userGender;//性别
+    private String userType;//类型
     private String userPassword;//密码
     private String City;//城市
     private String Sign;//签名
@@ -19,6 +20,14 @@ public class UserInfo extends BmobObject {
     private String Type;//用户类型（萝莉 御姐  成熟女士）
 
     public UserInfo() {
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     public UserInfo(String userID, String userName, String userIcon, String userGender, String userPassword, String city, String sign, String level, String token, String regPlatform, String type) {
