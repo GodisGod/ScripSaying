@@ -2,5 +2,9 @@
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\xml\\rc_file_path.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\xml\\rc_file_path.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\xml\\rc_file_path.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\xml\\rc_file_path.xml"
     }
 ]

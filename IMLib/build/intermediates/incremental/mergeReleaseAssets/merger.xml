@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="F:\SnapPaper\ScripSaying\IMLib\src\main\assets"/><source path="F:\SnapPaper\ScripSaying\IMLib\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="F:\SnapPaper\ScripSaying\IMLib\src\release\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\HD\ScripSaying\IMLib\src\main\assets"/><source path="D:\HD\ScripSaying\IMLib\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="D:\HD\ScripSaying\IMLib\src\release\assets"/></dataSet></merger>

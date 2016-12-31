@@ -1,59 +1,59 @@
 [
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoticon_tab_container.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoticon_tab_container.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_grid_camera.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_grid_camera.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversationlist.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_conversationlist.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_plugin_pager.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_plugin_pager.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoji_grid_view.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoji_grid_view.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_location_real_time_activity.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_location_real_time_activity.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_information_notification_message.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_group_information_notification_message.xml"
-    },
-    {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_messagelist.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_messagelist.xml"
-    },
-    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_sub_menu_item.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_sub_menu_item.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_multi_rich_content_message.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_multi_rich_content_message.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_albums.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_albums.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_file_download.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_file_download.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_conversation.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_conversation.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_image.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_image.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_dialog_popup_prompt.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_dialog_popup_prompt.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_block.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_wi_block.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_notice.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_wi_notice.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_text_message.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_text_message.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_item_single_choice.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_item_single_choice.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_plugin_item.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_plugin_item.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_dialog_alter.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_dialog_alter.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversation_member_list.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_conversation_member_list.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_camera.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_camera.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menus.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_input_menus.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_webview.xml",
@@ -68,24 +68,28 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_public_service_sub_list.xml"
     },
     {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_inf.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_public_service_inf.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_multi_rich_content_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_multi_rich_content_message.xml"
+    },
+    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_input_pager_layout.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_input_pager_layout.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoji_item.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoji_item.xml"
-    },
-    {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fragment_base_setting.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fragment_base_setting.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoji_item.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoji_item.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_block.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_wi_block.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_alert_robot_evaluation.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_alert_robot_evaluation.xml"
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fragment_base_setting.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fragment_base_setting.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_progress.xml",
@@ -96,12 +100,12 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_share_location_message.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_image_message.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_image_message.xml"
-    },
-    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_dialog_popup_options.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_dialog_popup_options.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_mention_list_item.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_mention_list_item.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_photo.xml",
@@ -112,12 +116,8 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_grid_item.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_grid_camera.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_grid_camera.xml"
-    },
-    {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_information_notification_message.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_information_notification_message.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_block_popup.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_wi_block_popup.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_plugin_grid_view.xml",
@@ -128,52 +128,40 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_conversation_member.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_picture_pager.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_picture_pager.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_picture_pager.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_picture_pager.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_extension_bar.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_extension_bar.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_image.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_image.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_plugin_location_activity.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_plugin_location_activity.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_search.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_search.xml"
-    },
-    {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_camera.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_camera.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_refresh_list_view.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_refresh_list_view.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_conversation.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_conversation.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoji_grid_view.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoji_grid_view.xml"
-    },
-    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_preview.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_preview.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_activity.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_activity.xml"
-    },
-    {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_inf.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_public_service_inf.xml"
-    },
-    {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_rich_content_message.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_rich_content_message.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_menu_container.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_menu_container.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_dialog_popup_options_item.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_dialog_popup_options_item.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_system_conversation.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_system_conversation.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_location_preview_activity.xml",
@@ -184,16 +172,20 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_albums.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_catalog_listview.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_catalog_listview.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversationlist.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_conversationlist.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_system_conversation.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_system_conversation.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_message.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_mention_members.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_mention_members.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_discussion_notification_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_discussion_notification_message.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_app_service_conversation.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_app_service_conversation.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_rich_content_message.xml",
@@ -204,40 +196,32 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_input_menu_item.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_input_edit_text.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_input_edit_text.xml"
-    },
-    {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_list.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_list.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_dialog_popup_prompt.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_dialog_popup_prompt.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_file_list.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_file_list.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_base_activity_layout.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_base_activity_layout.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoji_pager.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoji_pager.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_conversation.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_group_conversation.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_progress.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_progress.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_message.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_message.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversation_member_list.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_conversation_member_list.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_dialog_popup_prompt_warning.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_dialog_popup_prompt_warning.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_file_list.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_file_list.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_icon_rt_location_marker.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_icon_rt_location_marker.xml"
-    },
-    {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoji_pager.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoji_pager.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_webview.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_webview.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_menu_container.xml",
@@ -256,12 +240,16 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_base_conversation.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_search.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_public_service_search.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_alert_robot_evaluation.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_alert_robot_evaluation.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_message.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_message.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_input_edit_text.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_input_edit_text.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_location_message.xml",
@@ -272,64 +260,72 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_voice_input.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_discussion_conversation.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_discussion_conversation.xml"
-    },
-    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_file_manager.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_file_manager.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_refresh_list_view.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_refresh_list_view.xml"
-    },
-    {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_alert_human_evaluation.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_alert_human_evaluation.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_messagelist.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_messagelist.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_alert_warning.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_alert_warning.xml"
     },
     {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_information_notification_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_information_notification_message.xml"
+    },
+    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_block_popup.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_wi_block_popup.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_plugin_pager.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_plugin_pager.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_file_download.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_file_download.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_app_service_conversation.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_app_service_conversation.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_photo.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_photo.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_text_message_evaluate.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_text_message_evaluate.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_conversation.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_conversation.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_item_single_choice.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_item_single_choice.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_root_menu_item.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_root_menu_item.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menu.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_input_menu.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_conversation.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_group_conversation.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_icon_rt_location_marker.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_icon_rt_location_marker.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_file_message.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_file_message.xml"
     },
     {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_message.xml"
+    },
+    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_preview_fragment.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_preview_fragment.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_camera.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_camera.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_location_preview_activity.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_location_preview_activity.xml"
     },
     {
-        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_voice_message.xml",
-        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_voice_message.xml"
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_sub_menu_item.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_sub_menu_item.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_text_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_text_message.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_discussion_notification_message.xml",
@@ -344,6 +340,366 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_conversation.xml"
     },
     {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoticon_tab_container.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoticon_tab_container.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_preview.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_preview.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_image_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_image_message.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_grid_item.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_grid_item.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_original.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_original.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_alert_human_evaluation.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_alert_human_evaluation.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoticon_tab_container.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoticon_tab_container.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_extension_bar.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_extension_bar.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversationlist.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_conversationlist.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_preview_fragment.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_preview_fragment.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_information_notification_message.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_group_information_notification_message.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_messagelist.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_messagelist.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_multi_rich_content_message.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_multi_rich_content_message.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_file_download.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_file_download.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_dialog_popup_prompt.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_dialog_popup_prompt.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_conversation_member.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_conversation_member.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_input_pager_layout.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_input_pager_layout.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_plugin_grid_view.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_plugin_grid_view.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_sub_menu_container.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_sub_menu_container.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_plugin_item.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_plugin_item.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_text_message.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_text_message.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversation_member_list.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_conversation_member_list.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_dialog_popup_prompt_warning.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_dialog_popup_prompt_warning.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_location_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_location_message.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoji_item.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoji_item.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_base_conversation.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_base_conversation.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_alert_robot_evaluation.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_alert_robot_evaluation.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_indicator.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_indicator.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_image_message.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_image_message.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_file_list.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_file_list.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_grid_camera.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_grid_camera.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_base_activity_layout.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_base_activity_layout.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_sub_list.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_public_service_sub_list.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_information_notification_message.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_information_notification_message.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picprev_activity.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picprev_activity.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_picture_pager.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_picture_pager.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_text_message_evaluate.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_text_message_evaluate.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_extension_bar.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_extension_bar.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_pic_popup_window.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_pic_popup_window.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_search.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_search.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_camera.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_camera.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoji_grid_view.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoji_grid_view.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_activity.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_activity.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_discussion_conversation.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_discussion_conversation.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_inf.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_public_service_inf.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_rich_content_message.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_rich_content_message.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_plugin_location_activity.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_plugin_location_activity.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_catalog_listview.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_catalog_listview.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_alert_warning.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_alert_warning.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_rich_content_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_rich_content_message.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_system_conversation.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_system_conversation.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_mention_members.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_mention_members.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_camera.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_camera.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_mention_members.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_mention_members.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menu_item.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_input_menu_item.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_information_notification_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_group_information_notification_message.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_input_edit_text.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_input_edit_text.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_list.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_list.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_base_activity_layout.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_base_activity_layout.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_group_conversation.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_group_conversation.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_message.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_message.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_dialog_popup_options_item.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_dialog_popup_options_item.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_dialog_popup_prompt_warning.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_dialog_popup_prompt_warning.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_icon_rt_location_marker.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_icon_rt_location_marker.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_file_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_file_message.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoji_pager.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoji_pager.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_file_list_adapter.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_wi_file_list_adapter.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_vo_popup.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_wi_vo_popup.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_search.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_public_service_search.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_voice_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_voice_message.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_discussion_conversation.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_discussion_conversation.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_refresh_list_view.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_refresh_list_view.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_location_real_time_activity.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_location_real_time_activity.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_alert_human_evaluation.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_alert_human_evaluation.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_voice_input.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_voice_input.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_public_service_search.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_public_service_search.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_share_location_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_share_location_message.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menu.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_input_menu.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_activity.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_activity.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_catalog_listview.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_catalog_listview.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_plugin_pager.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_plugin_pager.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_notice.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_wi_notice.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_app_service_conversation.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_app_service_conversation.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoticon_tab_item.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoticon_tab_item.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_text_message_evaluate.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_text_message_evaluate.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_item_single_choice.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_item_single_choice.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menu.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_input_menu.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_camera.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_camera.xml"
+    },
+    {
+        "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_voice_message.xml",
+        "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_voice_message.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_conversation.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_conversation.xml"
+    },
+    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_emoticon_tab_item.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_emoticon_tab_item.xml"
     },
@@ -352,16 +708,40 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picprev_activity.xml"
     },
     {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ext_plugin_item.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ext_plugin_item.xml"
+    },
+    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fr_dialog_alter.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fr_dialog_alter.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_file_manager.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_file_manager.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_picsel_original.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_picsel_original.xml"
     },
     {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_dialog_popup_options.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_dialog_popup_options.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_list.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_list.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_rich_content_message.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_rich_content_message.xml"
+    },
+    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_wi_file_list_adapter.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_wi_file_list_adapter.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_fragment_base_setting.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_fragment_base_setting.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_conversation.xml",
@@ -372,12 +752,20 @@
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_mention_list_item.xml"
     },
     {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_search.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_search.xml"
+    },
+    {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_ac_file_list.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_ac_file_list.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_item_public_service_input_menus.xml",
         "source": "F:\\SnapPaper\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_item_public_service_input_menus.xml"
+    },
+    {
+        "merged": "D:\\HD\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_cs_single_choice_layout.xml",
+        "source": "D:\\HD\\ScripSaying\\IMKit\\src\\main\\res\\layout\\rc_cs_single_choice_layout.xml"
     },
     {
         "merged": "F:\\SnapPaper\\ScripSaying\\IMKit\\build\\intermediates\\res\\merged\\release\\layout\\rc_pic_popup_window.xml",
