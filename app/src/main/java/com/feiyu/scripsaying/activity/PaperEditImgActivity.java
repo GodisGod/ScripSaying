@@ -22,6 +22,7 @@ import com.feiyu.scripsaying.util.ScripContext;
 import com.feiyu.scripsaying.util.recorder.RecordButton;
 import com.feiyu.scripsaying.view.GlideCircleTransform;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -76,6 +77,7 @@ public class PaperEditImgActivity extends BaseActivity {
     //fileCombination=2  2: file[1]=audio
     //fileCombination=3  3: file[1]=audio file[2]=tag
 
+    private List<String> filepathslist;
     private int fileCombination = 0;
 
     //高德定位
@@ -96,9 +98,9 @@ public class PaperEditImgActivity extends BaseActivity {
                     //todo 获取tag图片路径
                     scripText = scripTextContent.getText().toString();
                     //todo 获取录音文件
-                    if (audioPath.isEmpty()){
+                    if (audioPath.isEmpty()) {
                         sendPaperMessage(chooseImg, null, chooseImg, scripText, new BmobGeoPoint(lng, lat));
-                    }else{
+                    } else {
                         sendPaperMessage(chooseImg, audioPath, chooseImg, scripText, new BmobGeoPoint(lng, lat));
                     }
                 } else {
@@ -223,28 +225,30 @@ public class PaperEditImgActivity extends BaseActivity {
 
         HD.TLOG(userId + " " + userGender + " " + userType + " " + text);
         //上传多个文件
-        String[] filePaths = new String[2];
+        filepathslist = new ArrayList<String>();
         //图片路径肯定有的
-        filePaths[0] = imgurl;
+        filepathslist.add(imgurl);
         //语音文件不一定有，因为用户不一定录音
-        if (audiourl.isEmpty()) {
+        if (audiourl == null) {
             //没有录音文件，判断是不是有tag
             //如果有tag就加上tag文件
             if (!typeurl.isEmpty()) {
-                filePaths[1] = typeurl;
+                filepathslist.add(typeurl);
                 fileCombination = 1;
             }
         } else {
             //有录音文件
-            filePaths[1] = audiourl;
+            filepathslist.add(audiourl);
             fileCombination = 2;
             //如果有tag就加上tag文件
             if (!typeurl.isEmpty()) {
-                filePaths[2] = typeurl;
+                filepathslist.add(typeurl);
                 fileCombination = 3;
             }
         }
+
         HD.TLOG("===333===");
+        String[] filePaths = filepathslist.toArray(new String[filepathslist.size()]);
         BmobFile.uploadBatch(filePaths, new UploadBatchListener() {
             @Override
             public void onSuccess(List<BmobFile> files, List<String> urls) {
@@ -294,6 +298,10 @@ public class PaperEditImgActivity extends BaseActivity {
                 HD.TLOG("上传进度 -onProgress :" + curIndex + "---" + curPercent + "---" + total + "----" + totalPercent);
             }
         });
+
+    }
+
+    private void upLoadFile(String[] filePaths) {
 
     }
 
