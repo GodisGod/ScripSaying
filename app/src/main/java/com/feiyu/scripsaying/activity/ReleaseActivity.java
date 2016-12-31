@@ -13,6 +13,7 @@ import butterknife.OnClick;
 
 /**
  * Created by YueDong on 2016/12/27.
+ * 发布
  */
 public class ReleaseActivity extends BaseActivity {
     @BindView(R.id.btn_album)
@@ -47,6 +48,8 @@ public class ReleaseActivity extends BaseActivity {
             case R.id.btn_edit_paper:
                 startActivity(new Intent(this,PaperEditImgActivity.class));
                 break;
+
+
         }
     }
 }
