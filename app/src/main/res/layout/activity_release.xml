@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:gravity="center"
+              android:layout_height="match_parent">
+<LinearLayout
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btn_album"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="相册"/>
+    <Button
+        android:id="@+id/btn_camera"
+        android:layout_marginLeft="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="相机"/>
+</LinearLayout>
+    <Button
+        android:id="@+id/btn_edit_paper"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="编辑语音或文字"/>
+</LinearLayout>
