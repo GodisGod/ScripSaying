@@ -1,18 +1,14 @@
 package com.feiyu.scripsaying.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-/**
- * Created by YueDong on 2016/12/27.
- */
-public abstract class BaseActivity extends AppCompatActivity {
+import com.feiyu.scripsaying.R;
+
+public class PaperEditTextActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_paper_edit_text);
     }
-
-
 }

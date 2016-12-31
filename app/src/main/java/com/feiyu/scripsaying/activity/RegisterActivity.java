@@ -3,6 +3,7 @@ package com.feiyu.scripsaying.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -42,9 +43,15 @@ public class RegisterActivity extends BaseActivity {
     private Context ctx;
 
     @Override
-    protected void initView() {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ctx = this;
+        initView();
+    }
+
+    private void initView() {
+
         etUserName = (EditText) findViewById(R.id.reg_et_name);
         etUserPassword = (EditText) findViewById(R.id.reg_et_password);
         chShowPassword = (CheckBox) findViewById(R.id.reg_check_show_password);
@@ -54,7 +61,7 @@ public class RegisterActivity extends BaseActivity {
         chShowPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
                     //显示密码
                     etUserPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
                     //第二种方法
@@ -62,10 +69,10 @@ public class RegisterActivity extends BaseActivity {
 //                            .getInstance());
                     //切换成眼睛图标
                     chShowPassword.setBackgroundResource(R.mipmap.show_password);
-                }else{
+                } else {
                     //隐藏密码
                     //第一种
-                    etUserPassword.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    etUserPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                     //第二种
 //                    etUserPassword.setTransformationMethod(PasswordTransformationMethod
 //                            .getInstance());
@@ -135,7 +142,7 @@ public class RegisterActivity extends BaseActivity {
                                                      */
                                                     @Override
                                                     public void onSuccess(String userid) {
-                                                       HD.TLOG("--onSuccess" + userid);
+                                                        HD.TLOG("--onSuccess" + userid);
                                                         startActivity(new Intent(ctx, ScripSayingActivity.class));
                                                         finish();
                                                     }
@@ -172,11 +179,6 @@ public class RegisterActivity extends BaseActivity {
                 });
             }
         });
-    }
-
-    @Override
-    protected void initData() {
-
     }
 
 

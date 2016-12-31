@@ -11,4 +11,7 @@ public class GlobalConstant {
     public final static String USER_TOKEN = "USER_TOKEN";
     public final static String DEFAULT_TOKEN = "DEFAULT_TOKEN";
     public final static String USER_ICON = "USER_ICON";
+
+    public final static int CHOOSE_TAG = 1;
+    public final static String CHOOSE_TAG_KEY = "choose_tag";
 }

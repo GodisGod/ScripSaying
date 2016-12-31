@@ -29,12 +29,10 @@ public class ReleaseActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @Override
     public void initView() {
 
     }
 
-    @Override
     public void initData() {
 
     }
@@ -47,7 +45,7 @@ public class ReleaseActivity extends BaseActivity {
             case R.id.btn_camera:
                 break;
             case R.id.btn_edit_paper:
-                startActivity(new Intent(this,PaperEditActivity.class));
+                startActivity(new Intent(this,PaperEditImgActivity.class));
                 break;
         }
     }

@@ -28,9 +28,7 @@
 
         <activity
             android:name=".activity.ScripSayingActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.BaseActivity"
             android:screenOrientation="portrait" />
@@ -38,7 +36,7 @@
             android:name=".activity.ReleaseActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.PaperEditActivity"
+            android:name=".activity.PaperEditImgActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
@@ -47,10 +45,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.RegisterActivity">
-
-        </activity>
-        <activity android:name=".activity.MeActivity"></activity>
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.MeActivity" />
+        <activity android:name=".activity.PaperEditTextActivity" />
+        <activity android:name=".activity.ChooseTagActivity"></activity>
     </application>
 
 </manifest>
