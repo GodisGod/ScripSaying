@@ -17,6 +17,8 @@ public class ScripSayingActivity extends BaseActivity {
     Button btnRelease;
     @BindView(R.id.btn_discover)
     Button btnDiscover;
+    @BindView(R.id.btn_my_page)
+    Button btnMyPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +27,17 @@ public class ScripSayingActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_release, R.id.btn_discover})
+    @OnClick({R.id.btn_release, R.id.btn_discover, R.id.btn_my_page})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_release:
-                startActivity(new Intent(this,ReleaseActivity.class));
+                startActivity(new Intent(this, ReleaseActivity.class));
                 break;
             case R.id.btn_discover:
-                startActivity(new Intent(this,DiscoverActivity.class));
+                startActivity(new Intent(this, DiscoverActivity.class));
+                break;
+            case R.id.btn_my_page:
+                startActivity(new Intent(this, MeActivity.class));
                 break;
         }
     }

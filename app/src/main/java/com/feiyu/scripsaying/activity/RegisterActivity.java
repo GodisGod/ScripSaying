@@ -115,16 +115,7 @@ public class RegisterActivity extends BaseActivity {
                                             if (e == null) {
                                                 HD.TLOG("用户ID上传成功");
                                                 HD.TLOG("用户信息更新成功" + u2.getUpdatedAt());
-
-                                                //3、保存用户信息到本地
-                                                SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
-                                                edit.putString(GlobalConstant.USER_ID, objectId);
-                                                edit.putString(GlobalConstant.USER_NAME, regName);
-                                                edit.putString(GlobalConstant.USER_PASSWORD, regPassword);
-                                                edit.putString(GlobalConstant.USER_TOKEN, token);
-                                                edit.putString(GlobalConstant.DEFAULT_TOKEN, token);
-                                                edit.apply();
-                                                //4、连接融云
+                                                //3、连接融云
                                                 RongIM.connect(token, new RongIMClient.ConnectCallback() {
 
                                                     /**
@@ -143,6 +134,14 @@ public class RegisterActivity extends BaseActivity {
                                                     @Override
                                                     public void onSuccess(String userid) {
                                                         HD.TLOG("--onSuccess" + userid);
+                                                        //4、保存用户信息到本地
+                                                        SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
+                                                        edit.putString(objectId+GlobalConstant.USER_ID, objectId);
+                                                        edit.putString(objectId+GlobalConstant.USER_NAME, regName);
+                                                        edit.putString(objectId+GlobalConstant.USER_PASSWORD, regPassword);
+                                                        edit.putString(objectId+GlobalConstant.USER_TOKEN, token);
+                                                        edit.putString(objectId+GlobalConstant.DEFAULT_TOKEN, token);
+                                                        edit.apply();
                                                         startActivity(new Intent(ctx, ScripSayingActivity.class));
                                                         finish();
                                                     }

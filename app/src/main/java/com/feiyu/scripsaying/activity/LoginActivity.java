@@ -97,14 +97,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     public void onSuccess(String userid) {
                                         HD.TLOG("--onSuccess" + userid);
                                         SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
-                                        edit.putString(GlobalConstant.USER_ID, userAccount);
-                                        edit.putString(GlobalConstant.USER_NAME, userInfo.getUserName());
-                                        edit.putString(GlobalConstant.USER_PASSWORD, userPassword);
-                                        edit.putString(GlobalConstant.USER_GENDER, userInfo.getUserGender());
-                                        edit.putString(GlobalConstant.USER_ICON, userInfo.getUserIcon());
-                                        edit.putString(GlobalConstant.USER_TYPE, userInfo.getUserType());
-                                        edit.putString(GlobalConstant.USER_TOKEN, userToken);
-                                        edit.putString(GlobalConstant.DEFAULT_TOKEN, userToken);
+                                        edit.putString(userid+GlobalConstant.USER_GENDER, userInfo.getUserGender());
+                                        edit.putString(userid+GlobalConstant.USER_ICON, userInfo.getUserIcon());
+                                        edit.putString(userid+GlobalConstant.USER_TYPE, userInfo.getUserType());
+                                        edit.putString(userid+GlobalConstant.USER_ID, userid);
+                                        edit.putString(userid+GlobalConstant.USER_NAME, userInfo.getUserName());
+                                        edit.putString(userid+GlobalConstant.USER_PASSWORD, userPassword);
+                                        edit.putString(userid+GlobalConstant.USER_TOKEN, userToken);
+                                        edit.putString(userid+GlobalConstant.DEFAULT_TOKEN, userToken);
                                         edit.apply();
                                         startActivity(new Intent(ctx, ScripSayingActivity.class));
                                         finish();
@@ -185,19 +185,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void done(List<UserInfo> list, BmobException e) {
                         if (e == null) {
-                            UserInfo userInfo = list.get(0);
+                            final UserInfo userInfo = list.get(0);
                             HD.TOS("登录存在用户： " + userInfo.getUserName() + "  " + userInfo.getUserPassword());
                             if (userPassword.equals(userInfo.getUserPassword())) {
                                 //获取用户信息并保存
                                 userToken = userInfo.getToken();
-                                SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
-                                edit.putString(GlobalConstant.USER_ID, userAccount);
-                                edit.putString(GlobalConstant.USER_NAME, userInfo.getUserName());
-                                edit.putString(GlobalConstant.USER_PASSWORD, userPassword);
-                                edit.putString(GlobalConstant.USER_GENDER, userInfo.getUserGender());
-                                edit.putString(GlobalConstant.USER_TOKEN, userToken);
-                                edit.putString(GlobalConstant.DEFAULT_TOKEN, userToken);
-                                edit.apply();
                                 //连接融云
                                 //4、连接融云
                                 RongIM.connect(userToken, new RongIMClient.ConnectCallback() {
@@ -221,11 +213,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                                             HD.TLOG("用户新Token上传成功");
                                                             HD.TLOG("用户信息更新成功" + u2.getUpdatedAt());
 
-                                                            //3、保存用户信息到本地
-                                                            SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
-                                                            edit.putString(GlobalConstant.USER_TOKEN, token);
-                                                            edit.putString(GlobalConstant.DEFAULT_TOKEN, token);
-                                                            edit.apply();
                                                             //4、再次连接融云
                                                             RongIM.connect(token, new RongIMClient.ConnectCallback() {
 
@@ -245,6 +232,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                                                 @Override
                                                                 public void onSuccess(String userid) {
                                                                     HD.TLOG("--onSuccess" + userid);
+                                                                    //3、保存用户信息到本地
+                                                                    SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
+                                                                    edit.putString(userid+GlobalConstant.USER_TOKEN, token);
+                                                                    edit.putString(userid+GlobalConstant.DEFAULT_TOKEN, token);
+                                                                    edit.apply();
                                                                     startActivity(new Intent(ctx, ScripSayingActivity.class));
                                                                     finish();
                                                                 }
@@ -279,6 +271,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     @Override
                                     public void onSuccess(String userid) {
                                         HD.TLOG("--onSuccess" + userid);
+                                        SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
+                                        edit.putString(userid+GlobalConstant.USER_GENDER, userInfo.getUserGender());
+                                        edit.putString(userid+GlobalConstant.USER_ICON, userInfo.getUserIcon());
+                                        edit.putString(userid+GlobalConstant.USER_TYPE, userInfo.getUserType());
+                                        edit.putString(userid+GlobalConstant.USER_ID, userid);
+                                        edit.putString(userid+GlobalConstant.USER_NAME, userInfo.getUserName());
+                                        edit.putString(userid+GlobalConstant.USER_PASSWORD, userPassword);
+                                        edit.putString(userid+GlobalConstant.USER_TOKEN, userToken);
+                                        edit.putString(userid+GlobalConstant.DEFAULT_TOKEN, userToken);
+                                        edit.apply();
                                         startActivity(new Intent(ctx, ScripSayingActivity.class));
                                         finish();
                                     }
