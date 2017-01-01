@@ -112,6 +112,7 @@ public class DisCoverPagerAdapter extends PagerAdapter {
             sendImgContent.setVisibility(View.VISIBLE);
             sendUserAudio.setVisibility(View.VISIBLE);
             sendAudioTime.setVisibility(View.VISIBLE);
+            sendTextContent.setVisibility(View.VISIBLE);
             sendText1.setVisibility(View.INVISIBLE);
             ScripImg = discoverScrip.getScripImg().getFileUrl();
             //todo 图片纸片
@@ -129,6 +130,7 @@ public class DisCoverPagerAdapter extends PagerAdapter {
             sendImgContent.setVisibility(View.INVISIBLE);
             sendUserAudio.setVisibility(View.INVISIBLE);
             sendAudioTime.setVisibility(View.INVISIBLE);
+            sendTextContent.setVisibility(View.INVISIBLE);
             sendText1.setVisibility(View.VISIBLE);
             HD.LOG("加载文字：  " + strScriptext);
             sendText1.setText(strScriptext);
@@ -138,7 +140,7 @@ public class DisCoverPagerAdapter extends PagerAdapter {
             @Override
             public void onClick(View view) {
                 if (RongIM.getInstance() != null) {
-                    HD.LOG("开启私聊页面  "+strsendUserId);
+                    HD.LOG("开启私聊页面  " + strsendUserId);
                     RongIM.getInstance().startPrivateChat(context, strsendUserId, strsendUserName);
                     //todo 接收预置消息
                 }
