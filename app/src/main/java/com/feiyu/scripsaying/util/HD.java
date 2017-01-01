@@ -3,7 +3,7 @@ package com.feiyu.scripsaying.util;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.feiyu.scripsaying.APP;
+import com.feiyu.scripsaying.App;
 
 
 /**
@@ -15,7 +15,7 @@ public class HD {
 
     public static void TOS(String str) {
         if (debug) {
-            Toast.makeText(APP.getContext(), str, Toast.LENGTH_SHORT).show();
+            Toast.makeText(App.getContext(), str, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -27,7 +27,7 @@ public class HD {
     public static void TLOG(String str) {
         if (debug) {
             Log.i(TAG, str);
-            Toast.makeText(APP.getContext(), str, Toast.LENGTH_SHORT).show();
+            Toast.makeText(App.getContext(), str, Toast.LENGTH_SHORT).show();
         }
     }
 

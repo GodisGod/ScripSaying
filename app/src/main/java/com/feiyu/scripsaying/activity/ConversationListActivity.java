@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.feiyu.scripsaying.APP;
+import com.feiyu.scripsaying.App;
 import com.feiyu.scripsaying.R;
 import com.feiyu.scripsaying.constant.GlobalConstant;
 import com.feiyu.scripsaying.util.HD;
@@ -110,7 +110,7 @@ public class ConversationListActivity extends AppCompatActivity {
      */
     private void reconnect(String token) {
 
-        if (getApplicationInfo().packageName.equals(APP.getCurProcessName(getApplicationContext()))) {
+        if (getApplicationInfo().packageName.equals(App.getCurProcessName(getApplicationContext()))) {
 
             RongIM.connect(token, new RongIMClient.ConnectCallback() {
                 @Override
