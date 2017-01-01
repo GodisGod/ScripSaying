@@ -60,9 +60,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     //自动登录逻辑
     private void autoLogin() {
         if (ScripContext.getInstance() != null) {
-            userAccount = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.USER_ID, "default");
-            userPassword = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.USER_PASSWORD, "default");
-            userToken = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.USER_TOKEN, "default");
+            userAccount = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
+            userPassword = ScripContext.getInstance().getSharedPreferences().getString(userAccount+GlobalConstant.USER_PASSWORD, "default");
+            userToken = ScripContext.getInstance().getSharedPreferences().getString(userAccount+GlobalConstant.USER_TOKEN, "default");
             //查看本地文件，获取ID PASSWORD TOKEN
             if (userAccount.equals("default") || userPassword.equals("default") || userToken.equals("default")) {
                 //不存在直接退出方法
@@ -97,11 +97,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     public void onSuccess(String userid) {
                                         HD.TLOG("--onSuccess" + userid);
                                         SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
+                                        edit.putString(GlobalConstant.CURRENT_ID, userid);
                                         edit.putString(userid+GlobalConstant.USER_GENDER, userInfo.getUserGender());
                                         edit.putString(userid+GlobalConstant.USER_ICON, userInfo.getUserIcon());
                                         edit.putString(userid+GlobalConstant.USER_TYPE, userInfo.getUserType());
                                         edit.putString(userid+GlobalConstant.USER_ID, userid);
                                         edit.putString(userid+GlobalConstant.USER_NAME, userInfo.getUserName());
+                                        edit.putString(userid+GlobalConstant.USER_SIGN, userInfo.getSign());
+                                        edit.putString(userid+GlobalConstant.USER_SIGN, userInfo.getSign());
                                         edit.putString(userid+GlobalConstant.USER_PASSWORD, userPassword);
                                         edit.putString(userid+GlobalConstant.USER_TOKEN, userToken);
                                         edit.putString(userid+GlobalConstant.DEFAULT_TOKEN, userToken);
@@ -236,6 +239,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                                                     SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
                                                                     edit.putString(userid+GlobalConstant.USER_TOKEN, token);
                                                                     edit.putString(userid+GlobalConstant.DEFAULT_TOKEN, token);
+                                                                    edit.putString(GlobalConstant.CURRENT_ID, userid);
                                                                     edit.apply();
                                                                     startActivity(new Intent(ctx, ScripSayingActivity.class));
                                                                     finish();
@@ -272,11 +276,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     public void onSuccess(String userid) {
                                         HD.TLOG("--onSuccess" + userid);
                                         SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
+                                        edit.putString(GlobalConstant.CURRENT_ID, userid);
                                         edit.putString(userid+GlobalConstant.USER_GENDER, userInfo.getUserGender());
                                         edit.putString(userid+GlobalConstant.USER_ICON, userInfo.getUserIcon());
                                         edit.putString(userid+GlobalConstant.USER_TYPE, userInfo.getUserType());
                                         edit.putString(userid+GlobalConstant.USER_ID, userid);
                                         edit.putString(userid+GlobalConstant.USER_NAME, userInfo.getUserName());
+                                        edit.putString(userid+GlobalConstant.USER_SIGN, userInfo.getSign());
                                         edit.putString(userid+GlobalConstant.USER_PASSWORD, userPassword);
                                         edit.putString(userid+GlobalConstant.USER_TOKEN, userToken);
                                         edit.putString(userid+GlobalConstant.DEFAULT_TOKEN, userToken);

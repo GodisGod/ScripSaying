@@ -136,6 +136,7 @@ public class RegisterActivity extends BaseActivity {
                                                         HD.TLOG("--onSuccess" + userid);
                                                         //4、保存用户信息到本地
                                                         SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
+                                                        edit.putString(GlobalConstant.CURRENT_ID, objectId);
                                                         edit.putString(objectId+GlobalConstant.USER_ID, objectId);
                                                         edit.putString(objectId+GlobalConstant.USER_NAME, regName);
                                                         edit.putString(objectId+GlobalConstant.USER_PASSWORD, regPassword);

@@ -28,7 +28,8 @@
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:background="#90af" />
+            android:background="#90af"
+            android:id="@+id/img_my_head_me" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,7 +54,8 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:text="aaa"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:id="@+id/tv_my_name_me" />
     </LinearLayout>
 
     <LinearLayout
@@ -79,7 +81,8 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:text="个性签名"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:id="@+id/tv_my_sign_me" />
 
     </LinearLayout>
 
@@ -106,7 +109,8 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:text="00001"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:id="@+id/tv_my_id_me" />
     </LinearLayout>
 
     <LinearLayout
@@ -131,8 +135,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:text="男"
-            android:textSize="20sp" />
+            android:text="no"
+            android:textSize="20sp"
+            android:id="@+id/tv_my_gender_me" />
     </LinearLayout>
 
     <LinearLayout
