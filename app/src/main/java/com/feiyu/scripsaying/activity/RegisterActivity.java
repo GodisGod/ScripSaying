@@ -107,7 +107,7 @@ public class RegisterActivity extends BaseActivity {
                                     HD.TLOG("获取Token成功");
                                     //2、上传用户ID
                                     final UserInfo u2 = new UserInfo();
-                                    u2.setUserID(objectId);
+                                    u2.setUserId(objectId);
                                     u2.setToken(token);
                                     u2.update(objectId, new UpdateListener() {
                                         @Override
@@ -136,7 +136,7 @@ public class RegisterActivity extends BaseActivity {
                                                         HD.TLOG("--onSuccess" + userid);
                                                         //4、保存用户信息到本地
                                                         SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
-                                                        edit.putString(GlobalConstant.CURRENT_ID, objectId);
+                                                        edit.putString(GlobalConstant.CURRENT_ID, userid);
                                                         edit.putString(objectId+GlobalConstant.USER_ID, objectId);
                                                         edit.putString(objectId+GlobalConstant.USER_NAME, regName);
                                                         edit.putString(objectId+GlobalConstant.USER_PASSWORD, regPassword);

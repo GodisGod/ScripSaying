@@ -6,18 +6,18 @@ import cn.bmob.v3.BmobObject;
  * Created by YueDong on 2016/12/27.
  */
 public class UserInfo extends BmobObject {
-    private String userID;      //用户ID 在服务端设置为唯一 使用ObjectId
+    private String userId;      //用户ID 在服务端设置为唯一 使用ObjectId
     private String userName;       //名字
     private String userIcon;//头像
     private String userGender;//性别
     private String userType;//类型
     private String userPassword;//密码
-    private String City;//城市
-    private String Sign;//签名
-    private String Level;//VIP等级
-    private String Token;//会话Token
+    private String city;//城市
+    private String sign;//签名
+    private String level;//VIP等级
+    private String token;//会话Token
     private String regPlatform;//注册平台（QQ 微信 微博 APP注册）
-    private String Type;//用户类型（萝莉 御姐  成熟女士）
+    private String type;//用户类型（萝莉 御姐  成熟女士）
 
     public UserInfo() {
     }
@@ -31,25 +31,25 @@ public class UserInfo extends BmobObject {
     }
 
     public UserInfo(String userID, String userName, String userIcon, String userGender, String userPassword, String city, String sign, String level, String token, String regPlatform, String type) {
-        this.userID = userID;
+        this.userId = userID;
         this.userName = userName;
         this.userIcon = userIcon;
         this.userGender = userGender;
         this.userPassword = userPassword;
-        City = city;
-        Sign = sign;
-        Level = level;
-        Token = token;
+        this.city = city;
+        this.sign = sign;
+        this.level = level;
+        this.token = token;
         this.regPlatform = regPlatform;
-        Type = type;
+        this.type = type;
     }
 
-    public String getUserID() {
-        return userID;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {
@@ -85,35 +85,35 @@ public class UserInfo extends BmobObject {
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public String getSign() {
-        return Sign;
+        return sign;
     }
 
     public void setSign(String sign) {
-        Sign = sign;
+        this.sign = sign;
     }
 
     public String getLevel() {
-        return Level;
+        return level;
     }
 
     public void setLevel(String level) {
-        Level = level;
+        this.level = level;
     }
 
     public String getToken() {
-        return Token;
+        return token;
     }
 
     public void setToken(String token) {
-        Token = token;
+        this.token = token;
     }
 
     public String getRegPlatform() {
@@ -125,10 +125,10 @@ public class UserInfo extends BmobObject {
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
 
     public void setType(String type) {
-        Type = type;
+        this.type = type;
     }
 }

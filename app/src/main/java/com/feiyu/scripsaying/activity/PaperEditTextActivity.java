@@ -87,7 +87,7 @@ public class PaperEditTextActivity extends BaseActivity {
         ButterKnife.bind(this);
         ctx = this;
         if (ScripContext.getInstance() != null) {
-            userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_ID, "default");
+            userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
             userIcon = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_ICON, "default");
             userGender = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_GENDER, "default");
             userType = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_TYPE, "default");
@@ -118,10 +118,10 @@ public class PaperEditTextActivity extends BaseActivity {
     private void sendPaperMessage(String textType, String text, BmobGeoPoint bmobGeoPoint) {
         HD.TLOG("sendPaperMessage");
         ScripMessage scripMessage = new ScripMessage();
-        scripMessage.setSendUserId(userId);
-        scripMessage.setSendUserType(userType);
-        scripMessage.setSendUserGender(userGender);
-        scripMessage.setScriptext(text);
+        scripMessage.setUserId(userId);
+        scripMessage.setUserType(userType);
+        scripMessage.setUserGender(userGender);
+        scripMessage.setScripText(text);
         scripMessage.setScripTypeText(textType);
         scripMessage.setLevel("1");
         scripMessage.setBmobGeoPoint(bmobGeoPoint);

@@ -132,7 +132,7 @@ public class PaperEditImgActivity extends BaseActivity {
                 .into(scripImgContent);
         //加载头像
         if (ScripContext.getInstance() != null) {
-            userIcon = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID+GlobalConstant.USER_ICON, "default");
+            userIcon = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_ICON, "default");
             if (!userIcon.equals("default")) {
                 Glide.with(ctx).load(userIcon)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
@@ -212,15 +212,17 @@ public class PaperEditImgActivity extends BaseActivity {
 
     private void sendPaperMessage(String imgurl, String audiourl, String typeurl, String text, BmobGeoPoint bmobGeoPoint) {
         HD.TLOG("sendPaperMessage");
-        String userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID+GlobalConstant.USER_ID, "default");
-        String userGender = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID+GlobalConstant.USER_GENDER, "default");
-        String userType = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID+GlobalConstant.USER_TYPE, "default");
+
+        String userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
+        String userGender = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_GENDER, "default");
+        String userType = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_TYPE, "default");
+        HD.LOG("userId:  " + userId);
         final ScripMessage scripMessage = new ScripMessage();
         scripMessage.setBmobGeoPoint(bmobGeoPoint);
-        scripMessage.setScriptext(text);
-        scripMessage.setSendUserGender(userGender);
-        scripMessage.setSendUserType(userType);
-        scripMessage.setSendUserId(userId);
+        scripMessage.setScripText(text);
+        scripMessage.setUserGender(userGender);
+        scripMessage.setUserType(userType);
+        scripMessage.setUserId(userId);
         scripMessage.setLevel("1");
 
         HD.TLOG(userId + " " + userGender + " " + userType + " " + text);

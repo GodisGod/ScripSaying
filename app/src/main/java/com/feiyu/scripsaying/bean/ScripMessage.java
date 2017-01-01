@@ -8,14 +8,14 @@ import cn.bmob.v3.datatype.BmobGeoPoint;
  * Created by HONGDA on 2016/12/31.
  */
 public class ScripMessage extends BmobObject {
-    private String sendUserId;          //发送者ID
-    private String sendUserType;       //发送者类型萝莉御姐少年绅士等
-    private String sendUserGender;     //发送者性别
-    private BmobFile ScripType;          //纸片类型的图片描述 足球篮球运动健身
-    private String ScripTypeText;          //纸片类型的文字描述 足球篮球运动健身
-    private BmobFile ScripImg;         //纸片图片
-    private BmobFile ScripAudio;      //纸片语音
-    private String Scriptext;   //纸片内容
+    private String userId;          //发送者ID
+    private String userType;       //发送者类型萝莉御姐少年绅士等
+    private String userGender;     //发送者性别
+    private BmobFile scripType;          //纸片类型的图片描述 足球篮球运动健身
+    private String scripTypeText;          //纸片类型的文字描述 足球篮球运动健身
+    private BmobFile scripImg;         //纸片图片
+    private BmobFile scripAudio;      //纸片语音
+    private String scripText;   //纸片内容
     private String level;            //纸片等级
     private BmobGeoPoint bmobGeoPoint;//纸片经纬度
 
@@ -23,69 +23,69 @@ public class ScripMessage extends BmobObject {
     public ScripMessage() {
     }
 
-    public String getScriptext() {
-        return Scriptext;
+    public String getScripText() {
+        return scripText;
     }
 
-    public void setScriptext(String scriptext) {
-        Scriptext = scriptext;
+    public void setScripText(String scripText) {
+        this.scripText = scripText;
     }
 
-    public String getSendUserId() {
-        return sendUserId;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setSendUserId(String sendUserId) {
-        this.sendUserId = sendUserId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getSendUserType() {
-        return sendUserType;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setSendUserType(String sendUserType) {
-        this.sendUserType = sendUserType;
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
-    public String getSendUserGender() {
-        return sendUserGender;
+    public String getUserGender() {
+        return userGender;
     }
 
-    public void setSendUserGender(String sendUserGender) {
-        this.sendUserGender = sendUserGender;
+    public void setUserGender(String userGender) {
+        this.userGender = userGender;
     }
 
     public BmobFile getScripType() {
-        return ScripType;
+        return scripType;
     }
 
     public void setScripType(BmobFile scripType) {
-        ScripType = scripType;
+        this.scripType = scripType;
     }
 
     public String getScripTypeText() {
-        return ScripTypeText;
+        return scripTypeText;
     }
 
     public void setScripTypeText(String scripTypeText) {
-        ScripTypeText = scripTypeText;
+        this.scripTypeText = scripTypeText;
     }
 
 
     public BmobFile getScripImg() {
-        return ScripImg;
+        return scripImg;
     }
 
     public void setScripImg(BmobFile scripImg) {
-        ScripImg = scripImg;
+        this.scripImg = scripImg;
     }
 
     public BmobFile getScripAudio() {
-        return ScripAudio;
+        return scripAudio;
     }
 
     public void setScripAudio(BmobFile scripAudio) {
-        ScripAudio = scripAudio;
+        this.scripAudio = scripAudio;
     }
 
 

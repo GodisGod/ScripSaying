@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,16 +15,18 @@ import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.feiyu.scripsaying.R;
 import com.feiyu.scripsaying.adapter.DisCoverPagerAdapter;
+import com.feiyu.scripsaying.bean.DiscoverScrip;
 import com.feiyu.scripsaying.bean.ScripMessage;
+import com.feiyu.scripsaying.bean.UserInfo;
 import com.feiyu.scripsaying.util.HD;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.datatype.BmobGeoPoint;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 import io.rong.imkit.RongIM;
@@ -42,9 +43,9 @@ public class DiscoverActivity extends AppCompatActivity {
     ImageView imgDiscover;
 
     private Context ctx;
-    private List<View> scripViews;
     private DisCoverPagerAdapter disCoverPagerAdapter;
-
+    private List<DiscoverScrip> discoverScrips;
+    private int i = 0;
     //高德定位
     private double lat;//维度
     private double lng;//经度
@@ -81,16 +82,9 @@ public class DiscoverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_discover);
         ButterKnife.bind(this);
         ctx = this;
-//        scripViews = new ArrayList<View>();
-//        LayoutInflater inflater = getLayoutInflater();
-//        for (int i = 0; i < 5; i++) {
-//            View view = inflater.inflate(R.layout.item_discover_scrip, null);
-//            scripViews.add(view);
-//        }
-//        HD.TLOG("viewpager size: " + scripViews.size());
-//        disCoverPagerAdapter = new DisCoverPagerAdapter(scripViews);
-//        viewPagerDiscover.setAdapter(disCoverPagerAdapter);
-//        HD.TLOG(" viewPagerDiscover.setAdapter(pagerAdapter);");
+        discoverScrips = new ArrayList<DiscoverScrip>();
+        disCoverPagerAdapter = new DisCoverPagerAdapter(ctx, discoverScrips);
+        viewPagerDiscover.setAdapter(disCoverPagerAdapter);
         imgDiscover.setVisibility(View.VISIBLE);
     }
 
@@ -119,25 +113,56 @@ public class DiscoverActivity extends AppCompatActivity {
 
     private void discoverScrips(double mlng, double mlat) {
         BmobQuery query = new BmobQuery<ScripMessage>("ScripMessage");
-        double a = 500 / 1000;
-        query.addWhereWithinKilometers("gpsAdd", new BmobGeoPoint(mlng, mlat), a);
+        double range = 500;
+        double a = range / 1000;
+        HD.TLOG("a==" + a);
+//        query.addWhereWithinKilometers("gpsAdd", new BmobGeoPoint(mlng, mlat), a);
 
 //      query.addWhereNear("gpsAdd",new BmobGeoPoint(lng,lat));//返回最近的纸片
-        Log.i("LHD", "D发现的经纬度： " + "\n" +
-                "D经度：" + lng + "\n" +
-                "D维度：" + lat);
         //最多展示附近的10条数据
         query.setLimit(10);
 
         query.findObjects(new FindListener<ScripMessage>() {
             @Override
-            public void done(List<ScripMessage> list, BmobException e) {
+            public void done(List<ScripMessage> mlist, BmobException e) {
                 if (e == null) {
-                    HD.TLOG("发现的纸片：" + list.size());
-                    for (ScripMessage s :
-                            list) {
-                        HD.LOG("发现的纸片：" + s.getSendUserId());
+                    HD.TLOG("发现的纸片：" + mlist.size());
+                    //todo 保存旧纸片
+                    discoverScrips.clear();
+                    for (final ScripMessage s : mlist) {
+                        HD.LOG("发现的纸片：" + s.getUserId());
+                        BmobQuery<UserInfo> bmobquery = new BmobQuery<UserInfo>();
+                        bmobquery.addWhereEqualTo("userId", s.getUserId());
+
+                        bmobquery.findObjects(new FindListener<UserInfo>() {
+                            @Override
+                            public void done(List<UserInfo> list, BmobException e) {
+                                HD.LOG("ssss  " + list.size());
+                                if (list.size()==0){
+                                    return;
+                                }
+                                //todo 筛选纸片
+                                UserInfo userinfo = list.get(0);
+                                DiscoverScrip discoverscrip = new DiscoverScrip();
+                                discoverscrip.setScripImg(s.getScripImg());
+                                discoverscrip.setSendUserId(s.getUserId());
+                                discoverscrip.setSendUserGender(s.getUserGender());
+                                discoverscrip.setUserType(s.getUserType());
+                                discoverscrip.setLevel(s.getLevel());
+                                discoverscrip.setScripAudio(s.getScripAudio());
+                                discoverscrip.setScriptext(s.getScripText());
+                                discoverscrip.setScripType(s.getScripType());
+                                discoverscrip.setSendUserIcon(userinfo.getUserIcon());
+                                discoverscrip.setSendUserName(userinfo.getUserName());
+                                discoverScrips.add(discoverscrip);
+                                imgDiscover.setVisibility(View.GONE);
+                                disCoverPagerAdapter.notifyDataSetChanged();
+                                HD.LOG(discoverscrip.toString());
+                                HD.LOG("discoverScrips:  " + discoverScrips.size());
+                            }
+                        });
                     }
+
                 } else {
                     HD.TLOG("发现异常： " + e.getMessage());
                 }

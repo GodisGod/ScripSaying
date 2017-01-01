@@ -183,7 +183,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
                 //验证
                 BmobQuery<UserInfo> query = new BmobQuery<UserInfo>("UserInfo");
-                query.addWhereEqualTo("userID", userAccount);
+                query.addWhereEqualTo("userId", userAccount);
                 query.findObjects(new FindListener<UserInfo>() {
                     @Override
                     public void done(List<UserInfo> list, BmobException e) {
