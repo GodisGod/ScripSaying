@@ -19,6 +19,8 @@ public class ScripSayingActivity extends BaseActivity {
     Button btnDiscover;
     @BindView(R.id.btn_my_page)
     Button btnMyPage;
+	@BindView(R.id.btn_test)
+    Button btnTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,5 +42,8 @@ public class ScripSayingActivity extends BaseActivity {
                 startActivity(new Intent(this, MeActivity.class));
                 break;
         }
+    @OnClick(R.id.btn_test)
+    public void onClick() {
+        startActivity(new Intent(this, CustomMarkerActivity.class));
     }
 }

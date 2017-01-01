@@ -22,10 +22,10 @@ import io.rong.imkit.RongIM;
  * Created by 李鸿达 on 2016/12/26.
  */
 
-public class APP extends Application {
+public class App extends Application {
 
     private static Context mContext;
-    private static APP sInstance;
+    private static App sInstance;
     public static int SCREEN_WIDTH;
     private ScripSendMessageListener listener;
     private ScripReceiveMessageListener receiveMessageListener;
@@ -104,14 +104,14 @@ public class APP extends Application {
 
     public static Context getContext() {
         if (mContext == null) {
-            throw new NullPointerException("APP Context is Null");
+            throw new NullPointerException("App Context is Null");
         }
         return mContext;
     }
 
-    public static APP getInstance() {
+    public static App getInstance() {
         if (sInstance == null) {
-            throw new NullPointerException("APP sInstance is Null");
+            throw new NullPointerException("App sInstance is Null");
         }
         return sInstance;
     }
