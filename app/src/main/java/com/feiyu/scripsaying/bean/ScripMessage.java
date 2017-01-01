@@ -11,7 +11,7 @@ public class ScripMessage extends BmobObject {
     private String userId;          //发送者ID
     private String userType;       //发送者类型萝莉御姐少年绅士等
     private String userGender;     //发送者性别
-    private BmobFile scripType;          //纸片类型的图片描述 足球篮球运动健身
+    private int scripType;          //纸片类型的图片描述 足球篮球运动健身
     private String scripTypeText;          //纸片类型的文字描述 足球篮球运动健身
     private BmobFile scripImg;         //纸片图片
     private BmobFile scripAudio;      //纸片语音
@@ -55,11 +55,11 @@ public class ScripMessage extends BmobObject {
         this.userGender = userGender;
     }
 
-    public BmobFile getScripType() {
+    public int getScripType() {
         return scripType;
     }
 
-    public void setScripType(BmobFile scripType) {
+    public void setScripType(int scripType) {
         this.scripType = scripType;
     }
 

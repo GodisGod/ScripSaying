@@ -88,14 +88,34 @@ public class DisCoverPagerAdapter extends PagerAdapter {
         String strScripTypeText = discoverScrip.getScripTypeText();
         String strScriptext = discoverScrip.getScriptext();
 
-        String ScripType = null;
-        if (discoverScrip.getScripType() != null) {
-            ScripType = discoverScrip.getScripType().getFileUrl();
-            Glide.with(context).load(ScripType)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .placeholder(R.mipmap.ic_launcher)
-                    .transform(new GlideCircleTransform(context))
-                    .into(sendScripTag);
+        int ScripType;
+        if (discoverScrip.getScripType() != 0) {
+            ScripType = discoverScrip.getScripType();
+            if (ScripType == 1) {
+                Glide.with(context).load(R.mipmap.tag1)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(context))
+                        .into(sendScripTag);
+            } else if (ScripType == 2) {
+                Glide.with(context).load(R.mipmap.tag2)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(context))
+                        .into(sendScripTag);
+            } else if (ScripType == 3) {
+                Glide.with(context).load(R.mipmap.tag3)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(context))
+                        .into(sendScripTag);
+            } else if (ScripType == 4) {
+                Glide.with(context).load(R.mipmap.tag4)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(context))
+                        .into(sendScripTag);
+            }
         }
 
         if (discoverScrip.getScripAudio() != null) {

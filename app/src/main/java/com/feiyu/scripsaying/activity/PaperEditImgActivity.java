@@ -55,7 +55,7 @@ public class PaperEditImgActivity extends BaseActivity {
     ImageView scripSend;
 
     private Context ctx;
-    private int chooseTag;
+    private int chooseTag = 0;
     private String chooseImg;
     private String userIcon;
     private String audioPath = "";
@@ -78,6 +78,7 @@ public class PaperEditImgActivity extends BaseActivity {
     //fileCombination=3  3: file[1]=audio file[2]=tag
 
     private List<String> filepathslist;
+
     private int fileCombination = 0;
 
     //高德定位
@@ -99,9 +100,9 @@ public class PaperEditImgActivity extends BaseActivity {
                     scripText = scripTextContent.getText().toString();
                     //todo 获取录音文件
                     if (audioPath.isEmpty()) {
-                        sendPaperMessage(chooseImg, null, chooseImg, scripText, new BmobGeoPoint(lng, lat));
+                        sendPaperMessage(chooseImg, null, chooseTag, scripText, new BmobGeoPoint(lng, lat));
                     } else {
-                        sendPaperMessage(chooseImg, audioPath, chooseImg, scripText, new BmobGeoPoint(lng, lat));
+                        sendPaperMessage(chooseImg, audioPath, chooseTag, scripText, new BmobGeoPoint(lng, lat));
                     }
                 } else {
                     //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
@@ -210,7 +211,7 @@ public class PaperEditImgActivity extends BaseActivity {
         }
     }
 
-    private void sendPaperMessage(String imgurl, String audiourl, String typeurl, String text, BmobGeoPoint bmobGeoPoint) {
+    private void sendPaperMessage(String imgurl, String audiourl, int typeurl, String text, BmobGeoPoint bmobGeoPoint) {
         HD.TLOG("sendPaperMessage");
 
         String userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
@@ -224,29 +225,18 @@ public class PaperEditImgActivity extends BaseActivity {
         scripMessage.setUserType(userType);
         scripMessage.setUserId(userId);
         scripMessage.setLevel("1");
-
+        scripMessage.setScripType(typeurl);
         HD.TLOG(userId + " " + userGender + " " + userType + " " + text);
         //上传多个文件
         filepathslist = new ArrayList<String>();
         //图片路径肯定有的
         filepathslist.add(imgurl);
+        fileCombination = 1;
         //语音文件不一定有，因为用户不一定录音
-        if (audiourl == null) {
-            //没有录音文件，判断是不是有tag
-            //如果有tag就加上tag文件
-            if (!typeurl.isEmpty()) {
-                filepathslist.add(typeurl);
-                fileCombination = 1;
-            }
-        } else {
+        if (audiourl != null) {
             //有录音文件
             filepathslist.add(audiourl);
             fileCombination = 2;
-            //如果有tag就加上tag文件
-            if (!typeurl.isEmpty()) {
-                filepathslist.add(typeurl);
-                fileCombination = 3;
-            }
         }
 
         HD.TLOG("===开始发布===");
@@ -255,31 +245,22 @@ public class PaperEditImgActivity extends BaseActivity {
             @Override
             public void onSuccess(List<BmobFile> files, List<String> urls) {
                 HD.TLOG("insertDataWithMany -onSuccess :" + urls.size() + "-----" + files + "----" + urls);
+                //添加图片文件
                 scripMessage.setScripImg(files.get(0));
                 switch (fileCombination) {
-                    //fileCombination=1  1: file[1]=tag  一共两个文件
+                    //fileCombination=1  只有图片
                     case 1:
-                        if (urls.size() == 2) {//如果全部上传完，则更新该条记录
-                            scripMessage.setScripType(files.get(1));
+                        if (urls.size() == 1) {//如果全部上传完，则更新该条记录
                             insertObject(scripMessage);
                         } else {
                             //有可能上传不完整，中间可能会存在未上传成功的情况，你可以自行处理
                         }
                         break;
-                    //fileCombination=2  2: file[1]=audio
+                    //fileCombination=2  图片加语音
                     case 2:
-                        if (urls.size() == 2) {//如果全部上传完，则更新该条记录
+                        if (urls.size() == 2) {
+                            //添加语音文件
                             scripMessage.setScripAudio(files.get(1));
-                            insertObject(scripMessage);
-                        } else {
-                            //有可能上传不完整，中间可能会存在未上传成功的情况，你可以自行处理
-                        }
-                        break;
-                    //fileCombination=3  3: file[1]=audio file[2]=tag
-                    case 3:
-                        if (urls.size() == 3) {//如果全部上传完，则更新该条记录
-                            scripMessage.setScripAudio(files.get(1));
-                            scripMessage.setScripType(files.get(2));
                             insertObject(scripMessage);
                         } else {
                             //有可能上传不完整，中间可能会存在未上传成功的情况，你可以自行处理
