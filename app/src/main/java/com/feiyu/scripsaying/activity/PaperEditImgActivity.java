@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -133,7 +132,7 @@ public class PaperEditImgActivity extends BaseActivity {
                 .into(scripImgContent);
         //加载头像
         if (ScripContext.getInstance() != null) {
-            userIcon = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.USER_ICON, "default");
+            userIcon = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID+GlobalConstant.USER_ICON, "default");
             if (!userIcon.equals("default")) {
                 Glide.with(ctx).load(userIcon)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
@@ -213,9 +212,9 @@ public class PaperEditImgActivity extends BaseActivity {
 
     private void sendPaperMessage(String imgurl, String audiourl, String typeurl, String text, BmobGeoPoint bmobGeoPoint) {
         HD.TLOG("sendPaperMessage");
-        String userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.USER_ID, "default");
-        String userGender = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.USER_GENDER, "default");
-        String userType = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.USER_TYPE, "default");
+        String userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID+GlobalConstant.USER_ID, "default");
+        String userGender = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID+GlobalConstant.USER_GENDER, "default");
+        String userType = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID+GlobalConstant.USER_TYPE, "default");
         final ScripMessage scripMessage = new ScripMessage();
         scripMessage.setBmobGeoPoint(bmobGeoPoint);
         scripMessage.setScriptext(text);
@@ -248,7 +247,7 @@ public class PaperEditImgActivity extends BaseActivity {
             }
         }
 
-        HD.TLOG("===333===");
+        HD.TLOG("===开始发布===");
         String[] filePaths = filepathslist.toArray(new String[filepathslist.size()]);
         BmobFile.uploadBatch(filePaths, new UploadBatchListener() {
             @Override
@@ -302,9 +301,6 @@ public class PaperEditImgActivity extends BaseActivity {
 
     }
 
-    private void upLoadFile(String[] filePaths) {
-
-    }
 
     private void insertObject(final ScripMessage scripMessage) {
         scripMessage.save(new SaveListener<String>() {

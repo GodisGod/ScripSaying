@@ -68,7 +68,7 @@ public class ReleaseActivity extends BaseActivity {
 
                 break;
             case R.id.btn_edit_paper:
-
+                startActivity(new Intent(ctx,PaperEditTextActivity.class));
                 break;
 
 
