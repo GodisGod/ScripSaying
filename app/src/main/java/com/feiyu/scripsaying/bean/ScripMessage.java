@@ -9,6 +9,7 @@ import cn.bmob.v3.datatype.BmobGeoPoint;
  */
 public class ScripMessage extends BmobObject {
     private String userId;          //发送者ID
+    private String userName;          //发送者昵称
     private String userType;       //发送者类型萝莉御姐少年绅士等
     private String userGender;     //发送者性别
     private int scripType;          //纸片类型的图片描述 足球篮球运动健身

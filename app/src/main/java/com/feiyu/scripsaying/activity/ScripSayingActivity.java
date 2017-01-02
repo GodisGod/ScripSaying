@@ -19,7 +19,7 @@ public class ScripSayingActivity extends BaseActivity {
     Button btnDiscover;
     @BindView(R.id.btn_my_page)
     Button btnMyPage;
-    @BindView(R.id.btn_test)
+	@BindView(R.id.btn_test)
     Button btnTest;
 
     @Override
@@ -29,7 +29,7 @@ public class ScripSayingActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_release, R.id.btn_discover, R.id.btn_my_page, R.id.btn_test})
+    @OnClick({R.id.btn_release, R.id.btn_discover, R.id.btn_my_page,R.id.btn_test})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_release:
@@ -42,7 +42,7 @@ public class ScripSayingActivity extends BaseActivity {
                 startActivity(new Intent(this, MeActivity.class));
                 break;
             case R.id.btn_test:
-//                startActivity(new Intent(this, CustomMarkerActivity.class));
+                startActivity(new Intent(this, CustomMarkerActivity.class));
                 break;
         }
     }
