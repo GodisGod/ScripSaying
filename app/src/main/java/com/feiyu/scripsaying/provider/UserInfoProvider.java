@@ -56,10 +56,24 @@ public class UserInfoProvider implements RongIM.UserInfoProvider {
             JSONObject object = jsonArray.getJSONObject(0);
             String user_name = object.getString("userName");
             String user_id = object.getString("userId");
-            JSONObject user_icon_object = object.getJSONObject("userIcon");
-            String user_icon = user_icon_object.getString("url");
-            Uri uri = Uri.parse(user_icon);
-            userInfo = new UserInfo(user_id, user_name, uri);
+
+            Uri uri = null;
+            //如果头像不存在显示默认头像
+            if (object.getString("userIcon") == null) {
+                HD.LOG("11");
+                uri = Uri.parse("http://img1.imgtn.bdimg.com/it/u=308521213,3171944616&fm=23&gp=0.jpg");
+                userInfo = new UserInfo(user_id, user_name, uri);
+            } else {
+                HD.LOG("22");
+                String user_icon = object.getString("userIcon");
+                uri = Uri.parse(user_icon);
+                userInfo = new UserInfo(user_id, user_name, uri);
+            }
+//            JSONObject user_icon_object = object.getJSONObject("user_icon");
+//            String user_icon = user_icon_object.getString("url");
+//            Uri uri = Uri.parse(user_icon);
+
+            HD.LOG("user_id： " + user_id + " user_name: " + user_name + " uri: " + uri);
         } catch (JSONException e) {
             e.printStackTrace();
         }

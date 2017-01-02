@@ -20,11 +20,8 @@ public class GlobalConstant {
     public final static String CHOOSE_TAG_KEY = "choose_tag";
     public final static String CHOOSE_IMG_KEY = "choose_img";
 
-    //录音时长的sp缓存的key
-    public static final String RECORD_TIME = "RECORD_TIME";
-    //录音保存的缓存目录
-    public static final String RECORD_CACHE = "/record";
-    //录音的文件格式
-    public static final String RECORD_FORMAT_MP3 = ".mp3";
-    public static final String RECORD_FORMAT = ".amr";
+    //默认头像路径
+    public final static String DEFAULT_USER_ICON_URL = "http://img1.imgtn.bdimg.com/it/u=308521213,3171944616&fm=23&gp=0.jpg";
+
+
 }

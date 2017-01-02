@@ -83,22 +83,22 @@
         <activity
             android:name=".activity.ChooseTagActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
-
-        <!--以下为测试Activity-->
+        <!-- 以下为测试Activity -->
         <activity
             android:name=".test.YDTestActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".test.CustomLocationActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
-        <service android:name="com.amap.api.location.APSService" />
-	
-	        <activity android:name=".activity.DiscoverActivity"></activity>
+            android:screenOrientation="portrait" />
 
+        <service android:name="com.amap.api.location.APSService" />
+
+        <activity android:name=".activity.DiscoverActivity" />
+        <activity android:name=".activity.CustomMarkerActivity" />
         <!-- IM 相关 -->
         <!-- 会话列表 -->
         <activity
@@ -135,6 +135,8 @@
         </activity>
 
         <receiver android:name=".receiver.SealNotificationReceiver" />
+
+        <activity android:name=".activity.EditSignActivity"></activity>
     </application>
 
 </manifest>
