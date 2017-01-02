@@ -25,8 +25,8 @@ public class UserInfoProvider implements RongIM.UserInfoProvider {
     @Override
     public UserInfo getUserInfo(String userId) {
         //todo 根据ID 获取用户的头像
-        BmobQuery query = new BmobQuery("User");
-        query.addWhereEqualTo("user_id", userId);
+        BmobQuery query = new BmobQuery("UserInfo");
+        query.addWhereEqualTo("userId", userId);
         query.findObjectsByTable(new QueryListener<JSONArray>() {
             @Override
             public void done(JSONArray jsonArray, BmobException e) {
@@ -54,9 +54,9 @@ public class UserInfoProvider implements RongIM.UserInfoProvider {
         UserInfo userInfo = null;
         try {
             JSONObject object = jsonArray.getJSONObject(0);
-            String user_name = object.getString("user_name");
-            String user_id = object.getString("user_id");
-            JSONObject user_icon_object = object.getJSONObject("user_icon");
+            String user_name = object.getString("userName");
+            String user_id = object.getString("userId");
+            JSONObject user_icon_object = object.getJSONObject("userIcon");
             String user_icon = user_icon_object.getString("url");
             Uri uri = Uri.parse(user_icon);
             userInfo = new UserInfo(user_id, user_name, uri);

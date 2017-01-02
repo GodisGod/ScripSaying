@@ -84,10 +84,6 @@
             android:name=".activity.ChooseTagActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"/>
-        <activity
-            android:name=".activity.CustomMarkerActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"/>
 
 
         <!--以下为测试Activity-->
