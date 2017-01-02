@@ -78,6 +78,7 @@ public class PaperEditTextActivity extends BaseActivity {
     };
     //声明AMapLocationClientOption对象
     public AMapLocationClientOption mLocationOption = null;
+    private String userName;
 
 
     @Override
@@ -88,9 +89,12 @@ public class PaperEditTextActivity extends BaseActivity {
         ctx = this;
         if (ScripContext.getInstance() != null) {
             userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
-            userIcon = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_ICON, "default");
-            userGender = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_GENDER, "default");
-            userType = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_TYPE, "default");
+            userIcon = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_ICON, "default");
+            userGender = ScripContext.getInstance().getSharedPreferences().getString(userId+ GlobalConstant.USER_GENDER, "default");
+            userType = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_TYPE, "default");
+            userName = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_NAME, "default");
+
+
             if (!userIcon.equals("default")) {
                 Glide.with(ctx).load(userIcon)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
@@ -125,6 +129,7 @@ public class PaperEditTextActivity extends BaseActivity {
         scripMessage.setScripTypeText(textType);
         scripMessage.setLevel("1");
         scripMessage.setBmobGeoPoint(bmobGeoPoint);
+        scripMessage.setUserName(userName);
         scripMessage.save(new SaveListener<String>() {
             @Override
             public void done(String s, BmobException e) {

@@ -215,8 +215,9 @@ public class PaperEditImgActivity extends BaseActivity {
         HD.TLOG("sendPaperMessage");
 
         String userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
-        String userGender = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_GENDER, "default");
-        String userType = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_TYPE, "default");
+        String userGender = ScripContext.getInstance().getSharedPreferences().getString(userId+ GlobalConstant.USER_GENDER, "default");
+        String userType = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_TYPE, "default");
+        String userName = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_NAME, "default");
         HD.LOG("userId:  " + userId);
         final ScripMessage scripMessage = new ScripMessage();
         scripMessage.setBmobGeoPoint(bmobGeoPoint);
@@ -226,6 +227,7 @@ public class PaperEditImgActivity extends BaseActivity {
         scripMessage.setUserId(userId);
         scripMessage.setLevel("1");
         scripMessage.setScripType(typeurl);
+        scripMessage.setUserName(userName);
         HD.TLOG(userId + " " + userGender + " " + userType + " " + text);
         //上传多个文件
         filepathslist = new ArrayList<String>();

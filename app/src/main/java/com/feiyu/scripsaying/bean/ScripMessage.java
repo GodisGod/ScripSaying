@@ -9,6 +9,7 @@ import cn.bmob.v3.datatype.BmobGeoPoint;
  */
 public class ScripMessage extends BmobObject {
     private String userId;          //发送者ID
+
     private String userName;          //发送者昵称
     private String userType;       //发送者类型萝莉御姐少年绅士等
     private String userGender;     //发送者性别
@@ -105,4 +106,13 @@ public class ScripMessage extends BmobObject {
     public void setBmobGeoPoint(BmobGeoPoint bmobGeoPoint) {
         this.bmobGeoPoint = bmobGeoPoint;
     }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
 }
