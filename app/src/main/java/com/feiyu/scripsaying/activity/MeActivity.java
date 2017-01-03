@@ -67,6 +67,7 @@ public class MeActivity extends AppCompatActivity {
     private String userName;
     private String userSign;
     private String userGender;
+    private String userType;
     private String userIcon;
     //调用系统相册-选择图片
     private static final int IMAGE = 2;
@@ -92,6 +93,7 @@ public class MeActivity extends AppCompatActivity {
             userName = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_NAME, "default");
             userSign = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_SIGN, "暂无签名");
             userGender = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_GENDER, "性别未知");
+            userType = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_TYPE, "default");
             userIcon = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_ICON, "default");
             if (userIcon.equals(GlobalConstant.DEFAULT_USER_ICON_URL)){
                 Glide.with(ctx).load(R.mipmap.default_head)
@@ -110,10 +112,11 @@ public class MeActivity extends AppCompatActivity {
             tvMyName.setText(userName);
             tvMySign.setText(userSign);
             tvMyGender.setText(userGender);
+            tvMyType.setText(userType);
         }
     }
 
-    @OnClick({R.id.line_my_head_me, R.id.line_my_name_me, R.id.line_my_sign_me, R.id.line_my_gender, R.id.line_my_send_scrip_me})
+    @OnClick({R.id.line_my_head_me, R.id.line_my_name_me, R.id.line_my_sign_me, R.id.line_my_gender,R.id.line_my_type, R.id.line_my_send_scrip_me})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.line_my_head_me:
@@ -129,14 +132,11 @@ public class MeActivity extends AppCompatActivity {
                 startActivity(new Intent(ctx, EditSignActivity.class));
                 break;
             case R.id.line_my_gender:
-                //修改性别
-                //显示自己的类型
-
-
+                //修改性别 用弹出框修改
                 break;
             case R.id.line_my_type:
-                //根据性别修改类型
-
+                //根据性别 修改类型
+                startActivity(new Intent(ctx,ChooseMyTypeActivity.class));
                 break;
             case R.id.line_my_send_scrip_me:
                 //地图展示我发送的纸片

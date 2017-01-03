@@ -113,6 +113,7 @@ public class RegisterActivity extends BaseActivity {
                 userInfo.setUserPassword(regPassword);
                 userInfo.setUserGender(gender);
                 userInfo.setUserIcon(GlobalConstant.DEFAULT_USER_ICON_URL);
+                userInfo.setUserType("no");
                 userInfo.save(new SaveListener<String>() {
                     @Override
                     public void done(final String objectId, BmobException e) {

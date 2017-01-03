@@ -23,5 +23,13 @@ public class GlobalConstant {
     //默认头像路径
     public final static String DEFAULT_USER_ICON_URL = "1";
 
+    //用户类型
+    public final static String GIRL_LUOLI = "萌萌萝莉";
+    public final static String GIRL_YUJIE = "霸气御姐";
+    public final static String GIRL_SHUNV = "优雅淑女";
+
+    public final static String BOY_ZHENGTAI = "可爱正太";
+    public final static String BOY_SHAONIAN = "潇洒少年";
+    public final static String BOY_CHENGSHU = "成熟男士";
 
 }
