@@ -142,8 +142,6 @@ public class MeActivity extends AppCompatActivity {
                 //地图展示我发送的纸片
                 startActivity(new Intent(this, CustomMarkerActivity.class));
                 break;
-
-
         }
     }
 
@@ -169,7 +167,7 @@ public class MeActivity extends AppCompatActivity {
 //            Bitmap bm = BitmapFactory.decodeFile(imgPath);
 //            imgMyHead.setImageBitmap(bm);
             c.close();
-
+            HD.TLOG("更新头像...");
             Glide.with(ctx).load(imgPath)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .placeholder(R.mipmap.ic_launcher)

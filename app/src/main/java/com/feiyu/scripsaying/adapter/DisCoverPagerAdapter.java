@@ -118,7 +118,7 @@ public class DisCoverPagerAdapter extends PagerAdapter {
         int ScripType;
         if (discoverScrip.getScripType() != 0) {
             ScripType = discoverScrip.getScripType();
-
+            sendScripTag.setVisibility(View.VISIBLE);
             int resId = context.getResources().getIdentifier("tag" + ScripType,"mipmap",
                     context.getPackageName());
             Glide.with(context).load(resId)
@@ -152,6 +152,8 @@ public class DisCoverPagerAdapter extends PagerAdapter {
 //                        .transform(new GlideCircleTransform(context))
 //                        .into(sendScripTag);
 //            }
+        }else{//没有tag就隐藏
+            sendScripTag.setVisibility(View.INVISIBLE);
         }
 
         //显示声音

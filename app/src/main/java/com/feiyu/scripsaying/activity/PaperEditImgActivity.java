@@ -305,31 +305,38 @@ public class PaperEditImgActivity extends BaseActivity {
                 //加载纸片类型
                 chooseTag = data.getIntExtra(GlobalConstant.CHOOSE_TAG_KEY, 0);
                 HD.TLOG("纸片类型： " + chooseTag);
-                if (chooseTag == 1) {
-                    Glide.with(ctx).load(R.mipmap.tag1)
-                            .diskCacheStrategy(DiskCacheStrategy.NONE)
-                            .placeholder(R.mipmap.ic_launcher)
-                            .transform(new GlideCircleTransform(ctx))
-                            .into(scripTag);
-                } else if (chooseTag == 2) {
-                    Glide.with(ctx).load(R.mipmap.tag2)
-                            .diskCacheStrategy(DiskCacheStrategy.NONE)
-                            .placeholder(R.mipmap.ic_launcher)
-                            .transform(new GlideCircleTransform(ctx))
-                            .into(scripTag);
-                } else if (chooseTag == 3) {
-                    Glide.with(ctx).load(R.mipmap.tag3)
-                            .diskCacheStrategy(DiskCacheStrategy.NONE)
-                            .placeholder(R.mipmap.ic_launcher)
-                            .transform(new GlideCircleTransform(ctx))
-                            .into(scripTag);
-                } else if (chooseTag == 4) {
-                    Glide.with(ctx).load(R.mipmap.tag4)
-                            .diskCacheStrategy(DiskCacheStrategy.NONE)
-                            .placeholder(R.mipmap.ic_launcher)
-                            .transform(new GlideCircleTransform(ctx))
-                            .into(scripTag);
-                }
+                int resId = ctx.getResources().getIdentifier("tag" + chooseTag,"mipmap",
+                        ctx.getPackageName());
+                Glide.with(ctx).load(resId)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(ctx))
+                        .into(scripTag);
+//                if (chooseTag == 1) {
+//                    Glide.with(ctx).load(R.mipmap.tag1)
+//                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                            .placeholder(R.mipmap.ic_launcher)
+//                            .transform(new GlideCircleTransform(ctx))
+//                            .into(scripTag);
+//                } else if (chooseTag == 2) {
+//                    Glide.with(ctx).load(R.mipmap.tag2)
+//                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                            .placeholder(R.mipmap.ic_launcher)
+//                            .transform(new GlideCircleTransform(ctx))
+//                            .into(scripTag);
+//                } else if (chooseTag == 3) {
+//                    Glide.with(ctx).load(R.mipmap.tag3)
+//                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                            .placeholder(R.mipmap.ic_launcher)
+//                            .transform(new GlideCircleTransform(ctx))
+//                            .into(scripTag);
+//                } else if (chooseTag == 4) {
+//                    Glide.with(ctx).load(R.mipmap.tag4)
+//                            .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                            .placeholder(R.mipmap.ic_launcher)
+//                            .transform(new GlideCircleTransform(ctx))
+//                            .into(scripTag);
+//                }
 
             }
         }
