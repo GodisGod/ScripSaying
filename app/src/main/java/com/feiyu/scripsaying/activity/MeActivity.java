@@ -3,6 +3,7 @@ package com.feiyu.scripsaying.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -73,6 +74,8 @@ public class MeActivity extends AppCompatActivity {
     private static final int IMAGE = 2;
 
     private Context ctx;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +83,10 @@ public class MeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_me);
         ButterKnife.bind(this);
         ctx = this;
-
+        if (ScripContext.getInstance() != null) {
+            sharedPreferences = ScripContext.getInstance().getSharedPreferences();
+            edit = ScripContext.getInstance().getSharedPreferences().edit();
+        }
     }
 
     @Override
@@ -88,35 +94,33 @@ public class MeActivity extends AppCompatActivity {
         super.onResume();
         //每次进来都刷新页面
         //因为onCreate方法不是每次进来都执行，所以刷新页面最好在onResume里做。
-        if (ScripContext.getInstance() != null) {
-            userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
-            userName = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_NAME, "default");
-            userSign = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_SIGN, "暂无签名");
-            userGender = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_GENDER, "性别未知");
-            userType = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_TYPE, "default");
-            userIcon = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_ICON, "default");
-            if (userIcon.equals(GlobalConstant.DEFAULT_USER_ICON_URL)){
-                Glide.with(ctx).load(R.mipmap.default_head)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .placeholder(R.mipmap.ic_launcher)
-                        .transform(new GlideCircleTransform(ctx))
-                        .into(imgMyHead);
-            }else{
-                Glide.with(ctx).load(userIcon)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .placeholder(R.mipmap.ic_launcher)
-                        .transform(new GlideCircleTransform(ctx))
-                        .into(imgMyHead);
-            }
-            tvMyId.setText(userId);
-            tvMyName.setText(userName);
-            tvMySign.setText(userSign);
-            tvMyGender.setText(userGender);
-            tvMyType.setText(userType);
+        userId = sharedPreferences.getString(GlobalConstant.CURRENT_ID, "default");
+        userName = sharedPreferences.getString(userId + GlobalConstant.USER_NAME, "default");
+        userSign = sharedPreferences.getString(userId + GlobalConstant.USER_SIGN, "暂无签名");
+        userGender = sharedPreferences.getString(userId + GlobalConstant.USER_GENDER, "性别未知");
+        userType = sharedPreferences.getString(userId + GlobalConstant.USER_TYPE, "default");
+        userIcon = sharedPreferences.getString(userId + GlobalConstant.USER_ICON, "default");
+        if (userIcon.equals(GlobalConstant.DEFAULT_USER_ICON_URL)) {
+            Glide.with(ctx).load(R.mipmap.default_head)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .transform(new GlideCircleTransform(ctx))
+                    .into(imgMyHead);
+        } else {
+            Glide.with(ctx).load(userIcon)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .transform(new GlideCircleTransform(ctx))
+                    .into(imgMyHead);
         }
+        tvMyId.setText(userId);
+        tvMyName.setText(userName);
+        tvMySign.setText(userSign);
+        tvMyGender.setText(userGender);
+        tvMyType.setText(userType);
     }
 
-    @OnClick({R.id.line_my_head_me, R.id.line_my_name_me, R.id.line_my_sign_me, R.id.line_my_gender,R.id.line_my_type, R.id.line_my_send_scrip_me})
+    @OnClick({R.id.line_my_head_me, R.id.line_my_name_me, R.id.line_my_sign_me, R.id.line_my_gender, R.id.line_my_type, R.id.line_my_send_scrip_me, R.id.line_login_out})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.line_my_head_me:
@@ -136,11 +140,18 @@ public class MeActivity extends AppCompatActivity {
                 break;
             case R.id.line_my_type:
                 //根据性别 修改类型
-                startActivity(new Intent(ctx,ChooseMyTypeActivity.class));
+                startActivity(new Intent(ctx, ChooseMyTypeActivity.class));
                 break;
             case R.id.line_my_send_scrip_me:
                 //地图展示我发送的纸片
                 startActivity(new Intent(this, CustomMarkerActivity.class));
+                break;
+            case R.id.line_login_out:
+                //退出登录
+                edit.putBoolean(GlobalConstant.LOGIN_OUT, true);
+                edit.apply();
+                startActivity(new Intent(ctx, LoginActivity.class));
+                finish();
                 break;
         }
     }
@@ -167,7 +178,7 @@ public class MeActivity extends AppCompatActivity {
 //            Bitmap bm = BitmapFactory.decodeFile(imgPath);
 //            imgMyHead.setImageBitmap(bm);
             c.close();
-            HD.TLOG("更新头像...");
+            HD.TLOG("更新头像..."+imgPath);
             Glide.with(ctx).load(imgPath)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .placeholder(R.mipmap.ic_launcher)
@@ -191,7 +202,12 @@ public class MeActivity extends AppCompatActivity {
 
         }
 
-
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ctx,ScripSayingActivity.class));
+        finish();
+    }
 }

@@ -62,9 +62,9 @@ public class EditNameActivity extends AppCompatActivity {
         u2.update(userId, new UpdateListener() {
             @Override
             public void done(BmobException e) {
-                HD.TLOG("用户头像更新成功");
+                HD.TLOG(userId+"用户名更新成功"+etName.getText().toString());
                 SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
-                edit.putString(userId + GlobalConstant.USER_SIGN, etName.getText().toString());
+                edit.putString(userId + GlobalConstant.USER_NAME, etName.getText().toString());
                 edit.apply();
                 finish();
             }

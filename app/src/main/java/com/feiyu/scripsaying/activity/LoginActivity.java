@@ -47,22 +47,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private String userToken;
     private String userName;
     private CloudUtil cloudUtil;
-
+    private boolean isLoginOut = false;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor edit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        autoLogin();
         initView();
+        if (ScripContext.getInstance() != null) {
+            sharedPreferences = ScripContext.getInstance().getSharedPreferences();
+            edit = ScripContext.getInstance().getSharedPreferences().edit();
+        }
 
+        HD.TLOG("isLoginOut: "+sharedPreferences.getBoolean(GlobalConstant.LOGIN_OUT,false));
+        isLoginOut = sharedPreferences.getBoolean(GlobalConstant.LOGIN_OUT,false);
+        userAccount = sharedPreferences.getString(GlobalConstant.CURRENT_ID, "default");
+        userPassword = sharedPreferences.getString(userAccount + GlobalConstant.USER_PASSWORD, "default");
+        userToken = sharedPreferences.getString(userAccount + GlobalConstant.USER_TOKEN, "default");
+        if (!isLoginOut){
+            autoLogin();
+        }else{
+            if (userAccount.equals("default") || userPassword.equals("default") || userToken.equals("default")) {
+                //不存在直接退出方法
+                return;
+            }
+            etUserAccount.setText(userAccount);
+            etUserPassword.setText(userPassword);
+        }
     }
 
     //自动登录逻辑
     private void autoLogin() {
-        if (ScripContext.getInstance() != null) {
-            userAccount = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
-            userPassword = ScripContext.getInstance().getSharedPreferences().getString(userAccount + GlobalConstant.USER_PASSWORD, "default");
-            userToken = ScripContext.getInstance().getSharedPreferences().getString(userAccount + GlobalConstant.USER_TOKEN, "default");
             //查看本地文件，获取ID PASSWORD TOKEN
             HD.LOG("userAccount: " + userAccount + "   userPassword : " + userPassword);
             if (userAccount.equals("default") || userPassword.equals("default") || userToken.equals("default")) {
@@ -97,7 +112,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     @Override
                                     public void onSuccess(String userid) {
                                         HD.TLOG("--onSuccess" + userid);
-                                        SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
                                         edit.putString(GlobalConstant.CURRENT_ID, userid);
                                         edit.putString(userid + GlobalConstant.USER_GENDER, userInfo.getUserGender());
                                         edit.putString(userid + GlobalConstant.USER_ICON, userInfo.getUserIcon());
@@ -109,6 +123,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         edit.putString(userid + GlobalConstant.USER_PASSWORD, userPassword);
                                         edit.putString(userid + GlobalConstant.USER_TOKEN, userToken);
                                         edit.putString(userid + GlobalConstant.DEFAULT_TOKEN, userToken);
+                                        edit.putBoolean(GlobalConstant.LOGIN_OUT,false);
                                         edit.apply();
                                         startActivity(new Intent(ctx, ScripSayingActivity.class));
                                         finish();
@@ -133,7 +148,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 });
             }
-        }
     }
 
     public void initView() {
@@ -165,6 +179,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
         });
+
     }
 
 
@@ -237,10 +252,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                                                 public void onSuccess(String userid) {
                                                                     HD.TLOG("--onSuccess" + userid);
                                                                     //3、保存用户信息到本地
-                                                                    SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
                                                                     edit.putString(userid + GlobalConstant.USER_TOKEN, token);
                                                                     edit.putString(userid + GlobalConstant.DEFAULT_TOKEN, token);
                                                                     edit.putString(GlobalConstant.CURRENT_ID, userid);
+                                                                    edit.putBoolean(GlobalConstant.LOGIN_OUT,false);
                                                                     edit.apply();
                                                                     startActivity(new Intent(ctx, ScripSayingActivity.class));
                                                                     finish();
@@ -276,7 +291,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     @Override
                                     public void onSuccess(String userid) {
                                         HD.TLOG("--onSuccess" + userid);
-                                        SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
                                         edit.putString(GlobalConstant.CURRENT_ID, userid);
                                         edit.putString(userid + GlobalConstant.USER_GENDER, userInfo.getUserGender());
                                         edit.putString(userid + GlobalConstant.USER_ICON, userInfo.getUserIcon());
@@ -287,6 +301,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         edit.putString(userid + GlobalConstant.USER_PASSWORD, userPassword);
                                         edit.putString(userid + GlobalConstant.USER_TOKEN, userToken);
                                         edit.putString(userid + GlobalConstant.DEFAULT_TOKEN, userToken);
+                                        edit.putBoolean(GlobalConstant.LOGIN_OUT,false);
                                         edit.apply();
                                         startActivity(new Intent(ctx, ScripSayingActivity.class));
                                         finish();
@@ -312,6 +327,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 finish();
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
     }
 }
 

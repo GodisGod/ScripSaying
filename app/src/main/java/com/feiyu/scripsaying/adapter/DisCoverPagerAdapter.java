@@ -81,13 +81,53 @@ public class DisCoverPagerAdapter extends PagerAdapter {
         DiscoverScrip discoverScrip = discoverScrips.get(position);
 
 
-        String struserType = discoverScrip.getUserType();
-        String strsendUserType = discoverScrip.getUserType();
         final String strsendUserId = discoverScrip.getSendUserId();
         final String strsendUserName = discoverScrip.getSendUserName();
         String strsendUserGender = discoverScrip.getSendUserGender();
         String strScripTypeText = discoverScrip.getScripTypeText();
         String strScriptext = discoverScrip.getScriptext();
+
+        //显示用户类型
+        if (discoverScrip.getSendUserIcon()!=null){
+            String strsendUserType = discoverScrip.getUserType();
+            if (strsendUserType.equals(GlobalConstant.GIRL_LUOLI)){
+                Glide.with(context).load(R.mipmap.luoli)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(context))
+                        .into(sendUserType);
+            }else if (strsendUserType.equals(GlobalConstant.GIRL_YUJIE)){
+                Glide.with(context).load(R.mipmap.yujie)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(context))
+                        .into(sendUserType);
+            }else if (strsendUserType.equals(GlobalConstant.GIRL_SHUNV)){
+                Glide.with(context).load(R.mipmap.shunv)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(context))
+                        .into(sendUserType);
+            }else if (strsendUserType.equals(GlobalConstant.BOY_ZHENGTAI)){
+                Glide.with(context).load(R.mipmap.zhengtai)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(context))
+                        .into(sendUserType);
+            }else if (strsendUserType.equals(GlobalConstant.BOY_SHAONIAN)){
+                Glide.with(context).load(R.mipmap.shaonian)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(context))
+                        .into(sendUserType);
+            }else if (strsendUserType.equals(GlobalConstant.BOY_CHENGSHU)){
+                Glide.with(context).load(R.mipmap.chengshu)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(context))
+                        .into(sendUserType);
+            }
+        }
 
         //显示头像
         if (discoverScrip.getSendUserIcon()!=null){

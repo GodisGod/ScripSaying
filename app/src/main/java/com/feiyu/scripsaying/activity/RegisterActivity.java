@@ -159,6 +159,7 @@ public class RegisterActivity extends BaseActivity {
                                                         edit.putString(GlobalConstant.CURRENT_ID, userid);
                                                         edit.putString(objectId + GlobalConstant.USER_ID, objectId);
                                                         edit.putString(objectId + GlobalConstant.USER_NAME, regName);
+                                                        edit.putString(objectId + GlobalConstant.USER_GENDER, gender);
                                                         edit.putString(objectId + GlobalConstant.USER_ICON,"1");
                                                         edit.putString(objectId + GlobalConstant.USER_PASSWORD, regPassword);
                                                         edit.putString(objectId + GlobalConstant.USER_TOKEN, token);

@@ -32,4 +32,7 @@ public class GlobalConstant {
     public final static String BOY_SHAONIAN = "潇洒少年";
     public final static String BOY_CHENGSHU = "成熟男士";
 
+    //是否退出
+    public final static String LOGIN_OUT = "LOGIN_OUT";
+
 }

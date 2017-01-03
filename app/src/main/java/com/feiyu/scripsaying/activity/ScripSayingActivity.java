@@ -48,6 +48,7 @@ public class ScripSayingActivity extends BaseActivity {
                 break;
             case R.id.btn_my_page:
                 startActivity(new Intent(this, MeActivity.class));
+                finish();
                 break;
             case R.id.btn_test:
                 startActivity(new Intent(this, CustomMarkerActivity.class));

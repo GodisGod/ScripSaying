@@ -106,7 +106,7 @@ public class ChooseMyTypeActivity extends AppCompatActivity {
                 edit.apply();
                 UserInfo userInfo = new UserInfo();
                 userInfo.setUserType(GlobalConstant.GIRL_LUOLI);
-                userInfo.update(new UpdateListener() {
+                userInfo.update(userId, new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         HD.TLOG("修改成功");
@@ -119,7 +119,7 @@ public class ChooseMyTypeActivity extends AppCompatActivity {
                 edit.apply();
                 UserInfo userInfo2 = new UserInfo();
                 userInfo2.setUserType(GlobalConstant.GIRL_YUJIE);
-                userInfo2.update(new UpdateListener() {
+                userInfo2.update(userId, new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         HD.TLOG("修改成功");
@@ -132,7 +132,7 @@ public class ChooseMyTypeActivity extends AppCompatActivity {
                 edit.apply();
                 UserInfo userInfo3 = new UserInfo();
                 userInfo3.setUserType(GlobalConstant.GIRL_SHUNV);
-                userInfo3.update(new UpdateListener() {
+                userInfo3.update(userId, new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         HD.TLOG("修改成功");
@@ -145,7 +145,7 @@ public class ChooseMyTypeActivity extends AppCompatActivity {
                 edit.apply();
                 UserInfo userInfo4 = new UserInfo();
                 userInfo4.setUserType(GlobalConstant.BOY_ZHENGTAI);
-                userInfo4.update(new UpdateListener() {
+                userInfo4.update(userId, new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         HD.TLOG("修改成功");
@@ -158,7 +158,7 @@ public class ChooseMyTypeActivity extends AppCompatActivity {
                 edit.apply();
                 UserInfo userInfo5 = new UserInfo();
                 userInfo5.setUserType(GlobalConstant.BOY_SHAONIAN);
-                userInfo5.update(new UpdateListener() {
+                userInfo5.update(userId, new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         HD.TLOG("修改成功");
@@ -171,7 +171,7 @@ public class ChooseMyTypeActivity extends AppCompatActivity {
                 edit.apply();
                 UserInfo userInfo6 = new UserInfo();
                 userInfo6.setUserType(GlobalConstant.BOY_CHENGSHU);
-                userInfo6.update(new UpdateListener() {
+                userInfo6.update(userId, new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         HD.TLOG("修改成功");
