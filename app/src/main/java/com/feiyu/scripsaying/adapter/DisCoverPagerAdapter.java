@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.feiyu.scripsaying.R;
 import com.feiyu.scripsaying.bean.DiscoverScrip;
+import com.feiyu.scripsaying.constant.GlobalConstant;
 import com.feiyu.scripsaying.util.HD;
 import com.feiyu.scripsaying.view.GlideCircleTransform;
 
@@ -29,7 +30,7 @@ public class DisCoverPagerAdapter extends PagerAdapter {
     private List<DiscoverScrip> discoverScrips;
 
     //根据user表查询
-    private String sendUserIcon;          //发送者头像
+    private String strsendUserIcon;          //发送者头像
     private String userType;              //发送者类型
     //根据Scrip表查询
     private String sendUserType;       //发送者类型萝莉御姐少年绅士等
@@ -79,7 +80,7 @@ public class DisCoverPagerAdapter extends PagerAdapter {
 
         DiscoverScrip discoverScrip = discoverScrips.get(position);
 
-        String strsendUserIcon = discoverScrip.getSendUserIcon();
+
         String struserType = discoverScrip.getUserType();
         String strsendUserType = discoverScrip.getUserType();
         final String strsendUserId = discoverScrip.getSendUserId();
@@ -88,46 +89,83 @@ public class DisCoverPagerAdapter extends PagerAdapter {
         String strScripTypeText = discoverScrip.getScripTypeText();
         String strScriptext = discoverScrip.getScriptext();
 
-        int ScripType;
-        if (discoverScrip.getScripType() != 0) {
-            ScripType = discoverScrip.getScripType();
-            if (ScripType == 1) {
-                Glide.with(context).load(R.mipmap.tag1)
+        //显示头像
+        if (discoverScrip.getSendUserIcon()!=null){
+            strsendUserIcon = discoverScrip.getSendUserIcon();
+            if (strsendUserIcon.equals(GlobalConstant.DEFAULT_USER_ICON_URL)){
+                Glide.with(context).load(R.mipmap.default_head)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
                         .placeholder(R.mipmap.ic_launcher)
                         .transform(new GlideCircleTransform(context))
-                        .into(sendScripTag);
-            } else if (ScripType == 2) {
-                Glide.with(context).load(R.mipmap.tag2)
+                        .into(sendUserIcon);
+            }else{
+                Glide.with(context).load(strsendUserIcon)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
                         .placeholder(R.mipmap.ic_launcher)
                         .transform(new GlideCircleTransform(context))
-                        .into(sendScripTag);
-            } else if (ScripType == 3) {
-                Glide.with(context).load(R.mipmap.tag3)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .placeholder(R.mipmap.ic_launcher)
-                        .transform(new GlideCircleTransform(context))
-                        .into(sendScripTag);
-            } else if (ScripType == 4) {
-                Glide.with(context).load(R.mipmap.tag4)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .placeholder(R.mipmap.ic_launcher)
-                        .transform(new GlideCircleTransform(context))
-                        .into(sendScripTag);
+                        .into(sendUserIcon);
             }
-        }
-
-        if (discoverScrip.getScripAudio() != null) {
-            sendUserAudio.setVisibility(View.VISIBLE);
-            ScripAudio = discoverScrip.getScripAudio().getFileUrl();
-            Glide.with(context).load(ScripAudio)
+        }else{
+            //没有就显示默认头像
+            Glide.with(context).load(R.mipmap.default_head)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .placeholder(R.mipmap.ic_launcher)
                     .transform(new GlideCircleTransform(context))
-                    .into(sendUserAudio);
+                    .into(sendUserIcon);
         }
 
+        //显示tag
+        int ScripType;
+        if (discoverScrip.getScripType() != 0) {
+            ScripType = discoverScrip.getScripType();
+
+            int resId = context.getResources().getIdentifier("tag" + ScripType,"mipmap",
+                    context.getPackageName());
+            Glide.with(context).load(resId)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .transform(new GlideCircleTransform(context))
+                    .into(sendScripTag);
+
+//            if (ScripType == 1) {
+//                Glide.with(context).load(R.mipmap.tag1)
+//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                        .placeholder(R.mipmap.ic_launcher)
+//                        .transform(new GlideCircleTransform(context))
+//                        .into(sendScripTag);
+//            } else if (ScripType == 2) {
+//                Glide.with(context).load(R.mipmap.tag2)
+//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                        .placeholder(R.mipmap.ic_launcher)
+//                        .transform(new GlideCircleTransform(context))
+//                        .into(sendScripTag);
+//            } else if (ScripType == 3) {
+//                Glide.with(context).load(R.mipmap.tag3)
+//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                        .placeholder(R.mipmap.ic_launcher)
+//                        .transform(new GlideCircleTransform(context))
+//                        .into(sendScripTag);
+//            } else if (ScripType == 4) {
+//                Glide.with(context).load(R.mipmap.tag4)
+//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                        .placeholder(R.mipmap.ic_launcher)
+//                        .transform(new GlideCircleTransform(context))
+//                        .into(sendScripTag);
+//            }
+        }
+
+        //显示声音
+        if (discoverScrip.getScripAudio() != null) {
+            sendUserAudio.setVisibility(View.VISIBLE);
+            ScripAudio = discoverScrip.getScripAudio().getFileUrl();
+            //todo 下载语音并播放
+//            Glide.with(context).load(ScripAudio)
+//                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                    .placeholder(R.mipmap.ic_launcher)
+//                    .transform(new GlideCircleTransform(context))
+//                    .into(sendUserAudio);
+        }
+        //显示图片
         if (discoverScrip.getScripImg() != null) {
             sendImgContent.setVisibility(View.VISIBLE);
             sendUserAudio.setVisibility(View.VISIBLE);
@@ -146,7 +184,7 @@ public class DisCoverPagerAdapter extends PagerAdapter {
                 sendTextContent.setText(strScriptext);
             }
         } else {
-            //todo 文字图片
+            //显示文字
             sendImgContent.setVisibility(View.INVISIBLE);
             sendUserAudio.setVisibility(View.INVISIBLE);
             sendAudioTime.setVisibility(View.INVISIBLE);
@@ -155,7 +193,7 @@ public class DisCoverPagerAdapter extends PagerAdapter {
             HD.LOG("加载文字：  " + strScriptext);
             sendText1.setText(strScriptext);
         }
-
+        //回复
         btnReply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,6 +207,5 @@ public class DisCoverPagerAdapter extends PagerAdapter {
 
         return view;
     }
-
 
 }

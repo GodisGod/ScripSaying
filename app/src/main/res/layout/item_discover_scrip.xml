@@ -61,7 +61,7 @@
             android:layout_alignLeft="@id/img_send_user_type"
             android:layout_below="@id/img_send_user_type"
             android:layout_marginTop="10dp"
-            android:background="@mipmap/ic_launcher" />
+            android:background="@mipmap/horn" />
 
         <TextView
             android:background="@drawable/bg_edittext"

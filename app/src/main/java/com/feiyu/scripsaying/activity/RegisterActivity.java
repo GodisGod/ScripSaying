@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.feiyu.scripsaying.R;
@@ -34,6 +36,8 @@ public class RegisterActivity extends BaseActivity {
     private EditText etUserPassword;
     private CheckBox chShowPassword;
     private TextView tvWrongTip;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
     private Button btnRegister;
 
     //变量声明
@@ -41,7 +45,7 @@ public class RegisterActivity extends BaseActivity {
     private String regPassword;
     private CloudUtil cloudUtil;
     private Context ctx;
-
+    private String gender = "m";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +61,20 @@ public class RegisterActivity extends BaseActivity {
         chShowPassword = (CheckBox) findViewById(R.id.reg_check_show_password);
         tvWrongTip = (TextView) findViewById(R.id.reg_wrong_tip);
         btnRegister = (Button) findViewById(R.id.reg_btn_register);
-
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                radioButton = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+                if (radioButton.getId() == R.id.rb_male) {
+                    gender = "m";
+                } else if (radioButton.getId() == R.id.rb_female) {
+                    gender = "f";
+                } else {
+                    gender = "no";
+                }
+            }
+        });
         chShowPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -94,6 +111,7 @@ public class RegisterActivity extends BaseActivity {
                 UserInfo userInfo = new UserInfo();
                 userInfo.setUserName(regName);
                 userInfo.setUserPassword(regPassword);
+                userInfo.setUserGender(gender);
                 userInfo.setUserIcon(GlobalConstant.DEFAULT_USER_ICON_URL);
                 userInfo.save(new SaveListener<String>() {
                     @Override
@@ -138,11 +156,12 @@ public class RegisterActivity extends BaseActivity {
                                                         //4、保存用户信息到本地
                                                         SharedPreferences.Editor edit = ScripContext.getInstance().getSharedPreferences().edit();
                                                         edit.putString(GlobalConstant.CURRENT_ID, userid);
-                                                        edit.putString(objectId+GlobalConstant.USER_ID, objectId);
-                                                        edit.putString(objectId+GlobalConstant.USER_NAME, regName);
-                                                        edit.putString(objectId+GlobalConstant.USER_PASSWORD, regPassword);
-                                                        edit.putString(objectId+GlobalConstant.USER_TOKEN, token);
-                                                        edit.putString(objectId+GlobalConstant.DEFAULT_TOKEN, token);
+                                                        edit.putString(objectId + GlobalConstant.USER_ID, objectId);
+                                                        edit.putString(objectId + GlobalConstant.USER_NAME, regName);
+                                                        edit.putString(objectId + GlobalConstant.USER_ICON,"1");
+                                                        edit.putString(objectId + GlobalConstant.USER_PASSWORD, regPassword);
+                                                        edit.putString(objectId + GlobalConstant.USER_TOKEN, token);
+                                                        edit.putString(objectId + GlobalConstant.DEFAULT_TOKEN, token);
                                                         edit.apply();
                                                         startActivity(new Intent(ctx, ScripSayingActivity.class));
                                                         finish();

@@ -45,6 +45,8 @@ public class MeActivity extends AppCompatActivity {
     LinearLayout lineMyId;
     @BindView(R.id.line_my_gender)
     LinearLayout lineMyGender;
+    @BindView(R.id.line_my_type)
+    LinearLayout lineMyType;
     @BindView(R.id.line_my_send_scrip_me)
     LinearLayout lineMySendScrip;
     //具体控件初始化
@@ -58,6 +60,8 @@ public class MeActivity extends AppCompatActivity {
     TextView tvMyId;
     @BindView(R.id.tv_my_gender_me)
     TextView tvMyGender;
+    @BindView(R.id.tv_my_type)
+    TextView tvMyType;
 
     private String userId;
     private String userName;
@@ -89,12 +93,19 @@ public class MeActivity extends AppCompatActivity {
             userSign = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_SIGN, "暂无签名");
             userGender = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_GENDER, "性别未知");
             userIcon = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_ICON, "default");
-
-            Glide.with(ctx).load(userIcon)
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .placeholder(R.mipmap.ic_launcher)
-                    .transform(new GlideCircleTransform(ctx))
-                    .into(imgMyHead);
+            if (userIcon.equals(GlobalConstant.DEFAULT_USER_ICON_URL)){
+                Glide.with(ctx).load(R.mipmap.default_head)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(ctx))
+                        .into(imgMyHead);
+            }else{
+                Glide.with(ctx).load(userIcon)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(ctx))
+                        .into(imgMyHead);
+            }
             tvMyId.setText(userId);
             tvMyName.setText(userName);
             tvMySign.setText(userSign);
@@ -111,7 +122,7 @@ public class MeActivity extends AppCompatActivity {
                 break;
             case R.id.line_my_name_me:
                 //修改昵称
-
+                startActivity(new Intent(ctx, EditNameActivity.class));
                 break;
             case R.id.line_my_sign_me:
                 //修改签名
@@ -119,6 +130,12 @@ public class MeActivity extends AppCompatActivity {
                 break;
             case R.id.line_my_gender:
                 //修改性别
+                //显示自己的类型
+
+
+                break;
+            case R.id.line_my_type:
+                //根据性别修改类型
 
                 break;
             case R.id.line_my_send_scrip_me:

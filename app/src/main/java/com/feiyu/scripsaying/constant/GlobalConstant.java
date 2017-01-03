@@ -21,7 +21,7 @@ public class GlobalConstant {
     public final static String CHOOSE_IMG_KEY = "choose_img";
 
     //默认头像路径
-    public final static String DEFAULT_USER_ICON_URL = "http://img1.imgtn.bdimg.com/it/u=308521213,3171944616&fm=23&gp=0.jpg";
+    public final static String DEFAULT_USER_ICON_URL = "1";
 
 
 }

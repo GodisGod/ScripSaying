@@ -136,7 +136,8 @@
 
         <receiver android:name=".receiver.SealNotificationReceiver" />
 
-        <activity android:name=".activity.EditSignActivity"></activity>
+        <activity android:name=".activity.EditSignActivity" />
+        <activity android:name=".activity.EditNameActivity"></activity>
     </application>
 
 </manifest>

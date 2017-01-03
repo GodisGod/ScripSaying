@@ -65,11 +65,36 @@
         android:layout_marginTop="10dp"
         android:textColor="@android:color/holo_red_light" />
 
+    <RadioGroup
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/reg_wrong_tip"
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="性别">
+
+        <RadioButton
+            android:id="@+id/rb_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+
+            android:text="男" />
+
+
+        <RadioButton
+            android:id="@+id/rb_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/reg_btn_register"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/reg_lay_2"
+        android:layout_below="@id/radioGroup"
         android:layout_marginTop="50dp"
         android:text="注册" />
 </RelativeLayout>
