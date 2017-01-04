@@ -246,6 +246,16 @@ public class DisCoverPagerAdapter extends PagerAdapter {
                 }
             }
         });
+        sendImgContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (RongIM.getInstance() != null) {
+                    HD.LOG("开启私聊页面  " + strsendUserId);
+                    RongIM.getInstance().startPrivateChat(context, strsendUserId, strsendUserName);
+                    //todo 接收预置消息
+                }
+            }
+        });
 
         return view;
     }
