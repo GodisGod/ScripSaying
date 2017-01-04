@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -76,6 +77,7 @@ public class DisCoverPagerAdapter extends PagerAdapter {
         TextView sendAudioTime = (TextView) view.findViewById(R.id.tv_audio_time);
         TextView sendTextContent = (TextView) view.findViewById(R.id.tv_scrip_content);
         TextView sendText1 = (TextView) view.findViewById(R.id.scrip_text_1);
+        LinearLayout lineSendUserAudio = (LinearLayout) view.findViewById(R.id.line_send_user_audio);
         Button btnReply = (Button) view.findViewById(R.id.btn_reply);
 
         DiscoverScrip discoverScrip = discoverScrips.get(position);
@@ -166,38 +168,13 @@ public class DisCoverPagerAdapter extends PagerAdapter {
                     .placeholder(R.mipmap.ic_launcher)
                     .transform(new GlideCircleTransform(context))
                     .into(sendScripTag);
-
-//            if (ScripType == 1) {
-//                Glide.with(context).load(R.mipmap.tag1)
-//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-//                        .placeholder(R.mipmap.ic_launcher)
-//                        .transform(new GlideCircleTransform(context))
-//                        .into(sendScripTag);
-//            } else if (ScripType == 2) {
-//                Glide.with(context).load(R.mipmap.tag2)
-//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-//                        .placeholder(R.mipmap.ic_launcher)
-//                        .transform(new GlideCircleTransform(context))
-//                        .into(sendScripTag);
-//            } else if (ScripType == 3) {
-//                Glide.with(context).load(R.mipmap.tag3)
-//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-//                        .placeholder(R.mipmap.ic_launcher)
-//                        .transform(new GlideCircleTransform(context))
-//                        .into(sendScripTag);
-//            } else if (ScripType == 4) {
-//                Glide.with(context).load(R.mipmap.tag4)
-//                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-//                        .placeholder(R.mipmap.ic_launcher)
-//                        .transform(new GlideCircleTransform(context))
-//                        .into(sendScripTag);
-//            }
         }else{//没有tag就隐藏
             sendScripTag.setVisibility(View.INVISIBLE);
         }
 
         //显示声音
         if (discoverScrip.getScripAudio() != null) {
+            lineSendUserAudio.setVisibility(View.VISIBLE);
             sendUserAudio.setVisibility(View.VISIBLE);
             ScripAudio = discoverScrip.getScripAudio().getFileUrl();
             //todo 下载语音并播放
@@ -206,6 +183,9 @@ public class DisCoverPagerAdapter extends PagerAdapter {
 //                    .placeholder(R.mipmap.ic_launcher)
 //                    .transform(new GlideCircleTransform(context))
 //                    .into(sendUserAudio);
+        }else{
+            lineSendUserAudio.setVisibility(View.GONE);
+            sendUserAudio.setVisibility(View.INVISIBLE);
         }
         //显示图片
         if (discoverScrip.getScripImg() != null) {
@@ -223,7 +203,10 @@ public class DisCoverPagerAdapter extends PagerAdapter {
                     .into(sendImgContent);
             HD.LOG("加载图片：  " + ScripImg);
             if (!strScriptext.isEmpty()) {
+                sendTextContent.setVisibility(View.VISIBLE);
                 sendTextContent.setText(strScriptext);
+            }else{
+                sendTextContent.setVisibility(View.GONE);
             }
         } else {
             //显示文字
@@ -234,6 +217,16 @@ public class DisCoverPagerAdapter extends PagerAdapter {
             sendText1.setVisibility(View.VISIBLE);
             HD.LOG("加载文字：  " + strScriptext);
             sendText1.setText(strScriptext);
+            sendText1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (RongIM.getInstance() != null) {
+                        HD.LOG("开启私聊页面  " + strsendUserId);
+                        RongIM.getInstance().startPrivateChat(context, strsendUserId, strsendUserName);
+                        //todo 接收预置消息
+                    }
+                }
+            });
         }
         //回复
         btnReply.setOnClickListener(new View.OnClickListener() {

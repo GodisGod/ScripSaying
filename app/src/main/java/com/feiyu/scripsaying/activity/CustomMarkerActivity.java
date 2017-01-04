@@ -60,7 +60,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
 /**
- *  Created by YueDong on 2016/1/4
+ * Created by YueDong on 2016/1/4
  * AMapV1地图中简单介绍一些Marker的用法.
  */
 public class CustomMarkerActivity extends Activity implements OnMarkerClickListener,
@@ -190,7 +190,7 @@ public class CustomMarkerActivity extends Activity implements OnMarkerClickListe
             String userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
             //根据userId查询发送
             BmobQuery<ScripMessage> bmobQuery = new BmobQuery<ScripMessage>("ScripMessage");
-            bmobQuery.addWhereEqualTo("userId",userId);
+            bmobQuery.addWhereEqualTo("userId", userId);
             bmobQuery.setLimit(15);
             bmobQuery.findObjects(new FindListener<ScripMessage>() {
 
@@ -198,7 +198,7 @@ public class CustomMarkerActivity extends Activity implements OnMarkerClickListe
                 @Override
                 public void done(List<ScripMessage> list, BmobException e) {
                     mList = list;
-                    LogUtil.d(TAG,"发送过纸片：："+list.size());
+                    LogUtil.d(TAG, "发送过纸片：：" + list.size());
                     if (e == null) {
                         // 往地图上添加marker
                         addMarkersToMap(list);
@@ -221,9 +221,9 @@ public class CustomMarkerActivity extends Activity implements OnMarkerClickListe
                 .zIndex(1.f).typeface(Typeface.DEFAULT_BOLD);
         aMap.addText(textOptions);
 
-        for(ScripMessage message:list){
+        for (ScripMessage message : list) {
             // 动画效果
-            if(giflist ==null){
+            if (giflist == null) {
                 giflist = new ArrayList<BitmapDescriptor>();
             }
             giflist.add(BitmapDescriptorFactory
@@ -233,9 +233,9 @@ public class CustomMarkerActivity extends Activity implements OnMarkerClickListe
             giflist.add(BitmapDescriptorFactory
                     .defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
 
-            if(markerOptions==null){
-                markerOptions = new MarkerOptions();
-            }
+
+            markerOptions = new MarkerOptions();
+
             //每次应当生成一个新的options
 //            MarkerOptions markerOptions = new MarkerOptions();
 //            if(latLng==null){
@@ -259,9 +259,6 @@ public class CustomMarkerActivity extends Activity implements OnMarkerClickListe
 
             onMapLoaded();
         }
-
-
-
 
 
 //      .anchor(0.5f, 0.5f)定义marker 图标的锚点。锚点是marker 图标接触地图平面的点。
@@ -409,7 +406,7 @@ public class CustomMarkerActivity extends Activity implements OnMarkerClickListe
      * 设置所有maker显示在当前可视区域地图中
      */
     private void showMarkerInMap(List<ScripMessage> list) {
-        if(list!=null&&list.size()>0){
+        if (list != null && list.size() > 0) {
             // 设置所有maker显示在当前可视区域地图中
 //            LatLngBounds bounds = new LatLngBounds.Builder()
 //                    .include(Constants.XIAN).include(Constants.CHENGDU)
@@ -513,10 +510,10 @@ public class CustomMarkerActivity extends Activity implements OnMarkerClickListe
                     }
                     String tile = "屏幕内有:";
                     for (Marker marker : markers) {
-                        tile = tile + marker.getSnippet()+"#";
+                        tile = tile + marker.getSnippet() + "#";
 
                     }
-                    ToastUtil.show(this, tile+(markers.size()-1)+"张纸片");
+                    ToastUtil.show(this, tile + (markers.size() - 1) + "张纸片");
 
                 }
                 break;

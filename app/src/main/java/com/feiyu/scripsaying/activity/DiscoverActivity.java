@@ -34,7 +34,8 @@ import cn.bmob.v3.listener.FindListener;
 import io.rong.imkit.RongIM;
 
 public class DiscoverActivity extends AppCompatActivity {
-
+    @BindView(R.id.img_bg_discover)
+    ImageView imgBgDiscover;
     @BindView(R.id.viewpager_discover)
     ViewPager viewPagerDiscover;
     @BindView(R.id.btn_my_message)
@@ -84,13 +85,18 @@ public class DiscoverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_discover);
         ButterKnife.bind(this);
         ctx = this;
+        Glide.with(ctx).load(R.mipmap.yinghua)
+                .asGif()
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .centerCrop()
+                .into(imgBgDiscover);
         discoverScrips = new ArrayList<DiscoverScrip>();
         disCoverPagerAdapter = new DisCoverPagerAdapter(ctx, discoverScrips);
         viewPagerDiscover.setAdapter(disCoverPagerAdapter);
         imgDiscover.setVisibility(View.VISIBLE);
         Glide.with(ctx).load(R.mipmap.discover_zuozhu)
+                .asBitmap()
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .placeholder(R.mipmap.ic_launcher)
                 .into(imgDiscover);
     }
 
@@ -116,7 +122,6 @@ public class DiscoverActivity extends AppCompatActivity {
             case R.id.btn_send_scrip:
                 //发布纸片
                 startActivity(new Intent(ctx, ReleaseActivity.class));
-                finish();
                 break;
         }
     }
@@ -130,7 +135,7 @@ public class DiscoverActivity extends AppCompatActivity {
 
 //      query.addWhereNear("gpsAdd",new BmobGeoPoint(lng,lat));//返回最近的纸片
         //最多展示附近的10条数据
-        query.setLimit(10);
+//        query.setLimit(10);
 
         query.findObjects(new FindListener<ScripMessage>() {
             @Override
@@ -148,7 +153,7 @@ public class DiscoverActivity extends AppCompatActivity {
                             @Override
                             public void done(List<UserInfo> list, BmobException e) {
                                 HD.LOG("ssss  " + list.size());
-                                if (list.size()==0){
+                                if (list.size() == 0) {
                                     return;
                                 }
                                 //todo 筛选纸片

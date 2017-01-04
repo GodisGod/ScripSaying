@@ -40,7 +40,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="fcbbeb876fa9845645a87f0798cc5687" />
+            android:value="dbf06a09286ecbcae43cd7e526e4d9d9" />
 
         <activity
             android:name=".activity.ScripSayingActivity"

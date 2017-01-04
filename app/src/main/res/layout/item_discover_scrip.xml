@@ -1,101 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/transparent"
-    android:fillViewport="true">
+    android:layout_height="match_parent"
+    android:padding="20dp">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp">
+        android:background="@android:color/transparent"
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/scrip_img"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/scrip_bg"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-        <TextView
-            android:id="@+id/scrip_text_1"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/bg_edittext"
-            android:gravity="center"
-            android:text="aaaaaaaa"
-            android:textSize="30sp"
-            android:visibility="gone" />
+            <ImageView
+                android:id="@+id/scrip_img"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
 
-        <ImageView
-            android:id="@+id/img_send_user_icon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignLeft="@id/scrip_img"
-            android:layout_alignTop="@id/scrip_img" />
+            <TextView
+                android:id="@+id/scrip_text_1"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:minHeight="300dp"
+                android:text=""
+                android:textSize="30sp"
+                android:visibility="gone" />
 
-        <ImageView
-            android:id="@+id/img_send_scrip_tag"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignRight="@id/scrip_img"
-            android:layout_alignTop="@id/scrip_img" />
+            <!--<ImageView-->
+            <!--android:id="@+id/img_send_user_icon"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignLeft="@id/scrip_img"-->
+            <!--android:layout_alignTop="@id/scrip_img" />-->
 
-        <ImageView
-            android:id="@+id/img_send_user_type"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignBottom="@id/scrip_img"
-            android:layout_alignLeft="@id/scrip_img"
-            android:layout_marginTop="10dp"
-            android:background="@mipmap/ic_launcher" />
+            <!--<ImageView-->
+            <!--android:id="@+id/img_send_scrip_tag"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignRight="@id/scrip_img"-->
+            <!--android:layout_alignTop="@id/scrip_img" />-->
 
-        <ImageView
-            android:id="@+id/img_send_user_audio"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignLeft="@id/img_send_user_type"
-            android:layout_below="@id/img_send_user_type"
-            android:layout_marginTop="10dp"
-            android:background="@mipmap/horn" />
+            <!--<ImageView-->
+            <!--android:id="@+id/img_send_user_type"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignBottom="@id/scrip_img"-->
+            <!--android:layout_alignLeft="@id/scrip_img"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:background="@mipmap/ic_launcher" />-->
+
+            <TextView
+                android:id="@+id/tv_scrip_content"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/scrip_img"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center"
+                android:minHeight="100dp"
+                android:text="" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true">
+
+                <Button
+                    android:id="@+id/btn_reply"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="回复"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/img_send_user_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left" />
+
+    <ImageView
+        android:id="@+id/img_send_scrip_tag"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right" />
+
+    <ImageView
+        android:id="@+id/img_send_user_type"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|left"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:id="@+id/line_send_user_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_audio_time"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_below="@id/img_send_user_type"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_toRightOf="@id/img_send_user_audio"
-            android:background="@drawable/bg_edittext"
+            android:layout_gravity="center_horizontal"
             android:gravity="center_vertical"
-            android:text="时间长度： 20s " />
+            android:text="20s "
+            android:textSize="10sp" />
 
-        <TextView
-            android:id="@+id/tv_scrip_content"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/img_send_user_audio"
-            android:layout_below="@id/img_send_user_audio"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="2dp"
-            android:background="@drawable/bg_edittext"
-            android:text="" />
+        <ImageView
+            android:id="@+id/img_send_user_audio"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@mipmap/horn" />
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true">
 
-            <Button
-                android:id="@+id/btn_reply"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:text="回复" />
-        </FrameLayout>
+    </LinearLayout>
 
-    </RelativeLayout>
-</ScrollView>
+</FrameLayout>
