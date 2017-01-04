@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private boolean isLoginOut = false;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor edit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,95 +60,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             edit = ScripContext.getInstance().getSharedPreferences().edit();
         }
 
-        HD.TLOG("isLoginOut: "+sharedPreferences.getBoolean(GlobalConstant.LOGIN_OUT,false));
-        isLoginOut = sharedPreferences.getBoolean(GlobalConstant.LOGIN_OUT,false);
+        HD.TLOG("isLoginOut: " + sharedPreferences.getBoolean(GlobalConstant.LOGIN_OUT, false));
+        isLoginOut = sharedPreferences.getBoolean(GlobalConstant.LOGIN_OUT, false);
         userAccount = sharedPreferences.getString(GlobalConstant.CURRENT_ID, "default");
         userPassword = sharedPreferences.getString(userAccount + GlobalConstant.USER_PASSWORD, "default");
         userToken = sharedPreferences.getString(userAccount + GlobalConstant.USER_TOKEN, "default");
-        if (!isLoginOut){
-            autoLogin();
-        }else{
-            if (userAccount.equals("default") || userPassword.equals("default") || userToken.equals("default")) {
-                //不存在直接退出方法
-                return;
-            }
-            etUserAccount.setText(userAccount);
-            etUserPassword.setText(userPassword);
-        }
-    }
-
-    //自动登录逻辑
-    private void autoLogin() {
-            //查看本地文件，获取ID PASSWORD TOKEN
-            HD.LOG("userAccount: " + userAccount + "   userPassword : " + userPassword);
-            if (userAccount.equals("default") || userPassword.equals("default") || userToken.equals("default")) {
-                //不存在直接退出方法
-                return;
-            } else {
-                //存在就根据ID到Bmob查询密码和Token
-                BmobQuery<UserInfo> query = new BmobQuery<UserInfo>("UserInfo");
-                query.addWhereEqualTo("userId", userAccount);
-                query.findObjects(new FindListener<UserInfo>() {
-                    @Override
-                    public void done(List<UserInfo> list, BmobException e) {
-                        if (e == null) {
-                            final UserInfo userInfo = list.get(0);
-                            userName = userInfo.getUserName();
-                            HD.TOS("存在用户： " + userInfo.getUserName() + "  " + userInfo.getUserPassword());
-                            //如果和服务器保存的Token一致就使用本地Token连接融云
-                            if (userPassword.equals(userInfo.getUserPassword()) && userToken.equals(userInfo.getToken())) {
-                                //用这个Token连接融云，如果连接失败就重新申请Token再登录
-                                //4、连接融云
-                                RongIM.connect(userToken, new RongIMClient.ConnectCallback() {
-                                    @Override
-                                    public void onTokenIncorrect() {
-                                        HD.TLOG("--onTokenIncorrect");
-                                        //连接失败说明token过期，需要用户再次登录，所以这里就直接退出方法
-                                        //需要帮用户填写账号密码
-                                        etUserAccount.setText(userAccount);
-                                        etUserPassword.setText(userPassword);
-                                        return;
-                                    }
-
-                                    @Override
-                                    public void onSuccess(String userid) {
-                                        HD.TLOG("--onSuccess" + userid);
-                                        edit.putString(GlobalConstant.CURRENT_ID, userid);
-                                        edit.putString(userid + GlobalConstant.USER_GENDER, userInfo.getUserGender());
-                                        edit.putString(userid + GlobalConstant.USER_ICON, userInfo.getUserIcon());
-                                        edit.putString(userid + GlobalConstant.USER_TYPE, userInfo.getUserType());
-                                        edit.putString(userid + GlobalConstant.USER_ID, userid);
-                                        edit.putString(userid + GlobalConstant.USER_NAME, userInfo.getUserName());
-                                        edit.putString(userid + GlobalConstant.USER_SIGN, userInfo.getSign());
-                                        edit.putString(userid + GlobalConstant.USER_SIGN, userInfo.getSign());
-                                        edit.putString(userid + GlobalConstant.USER_PASSWORD, userPassword);
-                                        edit.putString(userid + GlobalConstant.USER_TOKEN, userToken);
-                                        edit.putString(userid + GlobalConstant.DEFAULT_TOKEN, userToken);
-                                        edit.putBoolean(GlobalConstant.LOGIN_OUT,false);
-                                        edit.apply();
-                                        startActivity(new Intent(ctx, ScripSayingActivity.class));
-                                        finish();
-                                    }
-
-                                    @Override
-                                    public void onError(RongIMClient.ErrorCode errorCode) {
-                                        HD.TLOG("onError: " + errorCode);
-                                    }
-                                });
-                            }
-                            //不相等就直接退出方法,可能是用户改变了密码，所以要帮用户填写账号和旧密码
-                            etUserAccount.setText(userAccount);
-                            etUserPassword.setText(userPassword);
-                            //退出方法
-                            return;
-                        } else {
-                            //服务器不存在这个ID
-                            HD.TLOG("账号不存在，请先注册。");
-                            return;
-                        }
-                    }
-                });
-            }
+        etUserAccount.setText(userAccount);
+        etUserPassword.setText(userPassword);
     }
 
     public void initView() {
@@ -255,7 +174,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                                                     edit.putString(userid + GlobalConstant.USER_TOKEN, token);
                                                                     edit.putString(userid + GlobalConstant.DEFAULT_TOKEN, token);
                                                                     edit.putString(GlobalConstant.CURRENT_ID, userid);
-                                                                    edit.putBoolean(GlobalConstant.LOGIN_OUT,false);
+                                                                    edit.putBoolean(GlobalConstant.LOGIN_OUT, false);
                                                                     edit.apply();
                                                                     startActivity(new Intent(ctx, ScripSayingActivity.class));
                                                                     finish();
@@ -301,7 +220,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         edit.putString(userid + GlobalConstant.USER_PASSWORD, userPassword);
                                         edit.putString(userid + GlobalConstant.USER_TOKEN, userToken);
                                         edit.putString(userid + GlobalConstant.DEFAULT_TOKEN, userToken);
-                                        edit.putBoolean(GlobalConstant.LOGIN_OUT,false);
+                                        edit.putBoolean(GlobalConstant.LOGIN_OUT, false);
                                         edit.apply();
                                         startActivity(new Intent(ctx, ScripSayingActivity.class));
                                         finish();
@@ -332,7 +251,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-
+        if (isLoginOut) {
+            //todo 退出所有Activity
+        }
     }
 }
 
