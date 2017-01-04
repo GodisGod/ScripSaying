@@ -2,6 +2,7 @@ package com.feiyu.scripsaying.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -57,6 +58,7 @@ public class PaperEditImgActivity extends BaseActivity {
     private Context ctx;
     private int chooseTag = 0;
     private String chooseImg;
+    private String userId;
     private String userIcon;
     private String audioPath = "";
     private String scripText = "";
@@ -116,6 +118,8 @@ public class PaperEditImgActivity extends BaseActivity {
     //声明AMapLocationClientOption对象
     public AMapLocationClientOption mLocationOption = null;
 
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,25 +128,40 @@ public class PaperEditImgActivity extends BaseActivity {
         ButterKnife.bind(this);
         ctx = this;
         initView();
-
+        if (ScripContext.getInstance() != null) {
+            sharedPreferences = ScripContext.getInstance().getSharedPreferences();
+            edit = ScripContext.getInstance().getSharedPreferences().edit();
+            userId = sharedPreferences.getString(GlobalConstant.CURRENT_ID, "default");
+        }
         //加载纸片图片
         chooseImg = getIntent().getStringExtra(GlobalConstant.CHOOSE_IMG_KEY);
         Glide.with(ctx).load(chooseImg)
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .placeholder(R.mipmap.ic_launcher)
+                .transform(new GlideCircleTransform(ctx))
                 .into(scripImgContent);
         //加载头像
-        if (ScripContext.getInstance() != null) {
-            userIcon = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID + GlobalConstant.USER_ICON, "default");
-            if (!userIcon.equals("default")) {
-                Glide.with(ctx).load(userIcon)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        .placeholder(R.mipmap.ic_launcher)
-                        .transform(new GlideCircleTransform(ctx))
-                        .into(imgUserIcon);
-            }
+        userIcon = sharedPreferences.getString(userId + GlobalConstant.USER_ICON, "default");
+        if (!userIcon.equals("default")) {
+            Glide.with(ctx).load(userIcon)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .transform(new GlideCircleTransform(ctx))
+                    .into(imgUserIcon);
+        }else{
+            Glide.with(ctx).load(R.mipmap.default_head)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .placeholder(R.mipmap.ic_launcher)
+                    .transform(new GlideCircleTransform(ctx))
+                    .into(imgUserIcon);
         }
 
+        //加载默认Tag
+        Glide.with(ctx).load(R.mipmap.default_tag)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .placeholder(R.mipmap.ic_launcher)
+                .transform(new GlideCircleTransform(ctx))
+                .into(scripTag);
 
     }
 
@@ -214,10 +233,9 @@ public class PaperEditImgActivity extends BaseActivity {
     private void sendPaperMessage(String imgurl, String audiourl, int typeurl, String text, BmobGeoPoint bmobGeoPoint) {
         HD.TLOG("sendPaperMessage");
 
-        String userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
-        String userGender = ScripContext.getInstance().getSharedPreferences().getString(userId+ GlobalConstant.USER_GENDER, "default");
-        String userType = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_TYPE, "default");
-        String userName = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_NAME, "default");
+        String userGender = sharedPreferences.getString(userId + GlobalConstant.USER_GENDER, "default");
+        String userType = sharedPreferences.getString(userId + GlobalConstant.USER_TYPE, "default");
+        String userName = sharedPreferences.getString(userId + GlobalConstant.USER_NAME, "default");
         HD.LOG("userId:  " + userId);
         final ScripMessage scripMessage = new ScripMessage();
         scripMessage.setBmobGeoPoint(bmobGeoPoint);
@@ -305,7 +323,7 @@ public class PaperEditImgActivity extends BaseActivity {
                 //加载纸片类型
                 chooseTag = data.getIntExtra(GlobalConstant.CHOOSE_TAG_KEY, 0);
                 HD.TLOG("纸片类型： " + chooseTag);
-                int resId = ctx.getResources().getIdentifier("tag" + chooseTag,"mipmap",
+                int resId = ctx.getResources().getIdentifier("tag" + chooseTag, "mipmap",
                         ctx.getPackageName());
                 Glide.with(ctx).load(resId)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)

@@ -60,13 +60,7 @@ public class PaperEditTextActivity extends BaseActivity {
                     lng = amapLocation.getLongitude();
                     lat = amapLocation.getLatitude();
                     HD.TLOG("lat: " + lat + "   lng: " + lng + "\n" + "位置： " + amapLocation.getAddress());
-                    sendContent = editTextContent.getText().toString();
-                    if (!sendContent.isEmpty()) {
-                        sendPaperMessage("textTag", sendContent, new BmobGeoPoint(lng, lat));
-                    } else {
-                        HD.TLOG("请输入内容");
-                        return;
-                    }
+                    sendPaperMessage("textTag", sendContent, new BmobGeoPoint(lng, lat));
                 } else {
                     //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
                     HD.TOS("location Error, ErrCode:"
@@ -90,13 +84,19 @@ public class PaperEditTextActivity extends BaseActivity {
         if (ScripContext.getInstance() != null) {
             userId = ScripContext.getInstance().getSharedPreferences().getString(GlobalConstant.CURRENT_ID, "default");
             userIcon = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_ICON, "default");
-            userGender = ScripContext.getInstance().getSharedPreferences().getString(userId+ GlobalConstant.USER_GENDER, "default");
+            userGender = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_GENDER, "default");
             userType = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_TYPE, "default");
             userName = ScripContext.getInstance().getSharedPreferences().getString(userId + GlobalConstant.USER_NAME, "default");
 
 
             if (!userIcon.equals("default")) {
                 Glide.with(ctx).load(userIcon)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .transform(new GlideCircleTransform(ctx))
+                        .into(imgUserIcon);
+            } else {
+                Glide.with(ctx).load(R.mipmap.default_head)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
                         .placeholder(R.mipmap.ic_launcher)
                         .transform(new GlideCircleTransform(ctx))
@@ -114,7 +114,13 @@ public class PaperEditTextActivity extends BaseActivity {
                 break;
             case R.id.btn_send_scrip_text:
                 HD.TLOG("开始发布");
-                initLocation();
+                sendContent = editTextContent.getText().toString();
+                if (!sendContent.isEmpty()) {
+                    initLocation();
+                } else {
+                    HD.TLOG("请输入内容");
+                    return;
+                }
                 break;
         }
     }

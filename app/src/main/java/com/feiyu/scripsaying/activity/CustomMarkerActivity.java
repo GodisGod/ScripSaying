@@ -235,7 +235,8 @@ public class CustomMarkerActivity extends Activity implements OnMarkerClickListe
             if(markerOptions==null){
                 markerOptions = new MarkerOptions();
             }
-
+            //每次应当生成一个新的options
+//            MarkerOptions markerOptions = new MarkerOptions();
             if(latLng==null){
                 latLng = new LatLng(message.getBmobGeoPoint().getLatitude(), message.getBmobGeoPoint().getLongitude());
             }

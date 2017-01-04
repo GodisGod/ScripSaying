@@ -13,6 +13,8 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.feiyu.scripsaying.R;
 import com.feiyu.scripsaying.adapter.DisCoverPagerAdapter;
 import com.feiyu.scripsaying.bean.DiscoverScrip;
@@ -86,6 +88,10 @@ public class DiscoverActivity extends AppCompatActivity {
         disCoverPagerAdapter = new DisCoverPagerAdapter(ctx, discoverScrips);
         viewPagerDiscover.setAdapter(disCoverPagerAdapter);
         imgDiscover.setVisibility(View.VISIBLE);
+        Glide.with(ctx).load(R.mipmap.discover_zuozhu)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .placeholder(R.mipmap.ic_launcher)
+                .into(imgDiscover);
     }
 
 
@@ -94,6 +100,10 @@ public class DiscoverActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.img_discover:
                 //当没有纸片或者滑完纸片的时候显示，点击发现新纸片
+                Glide.with(ctx).load(R.mipmap.discover_gif)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .into(imgDiscover);
                 initLocation();
                 break;
             case R.id.btn_my_message:
@@ -162,7 +172,6 @@ public class DiscoverActivity extends AppCompatActivity {
                             }
                         });
                     }
-
                 } else {
                     HD.TLOG("发现异常： " + e.getMessage());
                 }

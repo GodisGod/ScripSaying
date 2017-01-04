@@ -21,11 +21,11 @@
             android:id="@+id/scrip_text_1"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:text="aaaaaaaa"
-            android:background="@drawable/bg_edittext"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
+            android:background="@drawable/bg_edittext"
             android:gravity="center"
+            android:text="aaaaaaaa"
             android:textSize="30sp"
             android:visibility="gone" />
 
@@ -34,16 +34,14 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignLeft="@id/scrip_img"
-            android:layout_alignTop="@id/scrip_img"
-            android:background="@mipmap/ic_launcher" />
+            android:layout_alignTop="@id/scrip_img" />
 
         <ImageView
             android:id="@+id/img_send_scrip_tag"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignRight="@id/scrip_img"
-            android:layout_alignTop="@id/scrip_img"
-            android:background="@mipmap/ic_launcher" />
+            android:layout_alignTop="@id/scrip_img" />
 
         <ImageView
             android:id="@+id/img_send_user_type"
@@ -64,7 +62,6 @@
             android:background="@mipmap/horn" />
 
         <TextView
-            android:background="@drawable/bg_edittext"
             android:id="@+id/tv_audio_time"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -72,11 +69,11 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/img_send_user_audio"
+            android:background="@drawable/bg_edittext"
             android:gravity="center_vertical"
             android:text="时间长度： 20s " />
 
         <TextView
-            android:background="@drawable/bg_edittext"
             android:id="@+id/tv_scrip_content"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
@@ -84,6 +81,7 @@
             android:layout_below="@id/img_send_user_audio"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="2dp"
+            android:background="@drawable/bg_edittext"
             android:text="" />
 
         <FrameLayout
