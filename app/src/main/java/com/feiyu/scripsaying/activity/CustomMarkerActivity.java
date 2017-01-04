@@ -60,6 +60,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
 /**
+ *  Created by YueDong on 2016/1/4
  * AMapV1地图中简单介绍一些Marker的用法.
  */
 public class CustomMarkerActivity extends Activity implements OnMarkerClickListener,
@@ -237,13 +238,13 @@ public class CustomMarkerActivity extends Activity implements OnMarkerClickListe
             }
             //每次应当生成一个新的options
 //            MarkerOptions markerOptions = new MarkerOptions();
-            if(latLng==null){
-                latLng = new LatLng(message.getBmobGeoPoint().getLatitude(), message.getBmobGeoPoint().getLongitude());
-            }
+//            if(latLng==null){
+//                latLng = new LatLng(message.getBmobGeoPoint().getLatitude(), message.getBmobGeoPoint().getLongitude());
+//            }
 
             // 设置所有maker显示在当前可视区域地图中
             bounds = new LatLngBounds.Builder()
-                    .include(latLng).build();
+                    .include(new LatLng(message.getBmobGeoPoint().getLatitude(), message.getBmobGeoPoint().getLongitude())).build();
 
 
             markerOptions.anchor(0.5f, 0.5f)
