@@ -101,6 +101,7 @@ public class MeActivity extends AppCompatActivity {
         userType = sharedPreferences.getString(userId + GlobalConstant.USER_TYPE, "default");
         userIcon = sharedPreferences.getString(userId + GlobalConstant.USER_ICON, "default");
         if (userIcon.equals(GlobalConstant.DEFAULT_USER_ICON_URL)) {
+            HD.LOG("onResume： 更新头像  "+userIcon);
             Glide.with(ctx).load(R.mipmap.default_head)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .placeholder(R.mipmap.ic_launcher)
@@ -177,6 +178,9 @@ public class MeActivity extends AppCompatActivity {
 
 //            Bitmap bm = BitmapFactory.decodeFile(imgPath);
 //            imgMyHead.setImageBitmap(bm);
+            //先保存本地图片到文件
+            edit.putString(userId+GlobalConstant.USER_ICON,imgPath);
+            edit.apply();
             c.close();
             HD.TLOG("更新头像..."+imgPath);
             Glide.with(ctx).load(imgPath)
@@ -194,7 +198,10 @@ public class MeActivity extends AppCompatActivity {
                     u2.update(userId, new UpdateListener() {
                         @Override
                         public void done(BmobException e) {
-                            HD.TLOG("用户头像更新成功");
+                            //执行了onResume方法会快于这个回调，在这个回调里保存头像的网络路径
+                            edit.putString(userId+GlobalConstant.USER_ICON,bmobFile.getUrl());
+                            HD.TLOG("用户头像更新成功 "+bmobFile.getUrl());
+                            edit.apply();
                         }
                     });
                 }
